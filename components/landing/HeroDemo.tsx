@@ -66,12 +66,12 @@ export default function HeroDemo() {
     <div className="grid gap-6 md:grid-cols-[1.35fr_1fr]">
       <div className="min-w-0">
         <div className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] p-2 pl-3">
-          <Wand2 size={15} className="shrink-0 text-[#8b7bff]" />
+          <Wand2 size={15} className="shrink-0 text-[#ee7a6f]" />
           <span className="min-w-0 flex-1 truncate text-[13px] text-white/90">
             {goal.slice(0, typed)}
             {typing && <span className="ml-0.5 inline-block h-3.5 w-px translate-y-0.5 animate-pulse bg-white" />}
           </span>
-          <span className={`shrink-0 rounded-lg px-3 py-1.5 text-[12px] font-semibold text-white transition-colors ${typing ? "bg-white/10" : "bg-[#7c5cff]"}`}>Plan and run</span>
+          <span className={`shrink-0 rounded-lg px-3 py-1.5 text-[12px] font-semibold text-white transition-colors ${typing ? "bg-white/10" : "bg-[#e0584c]"}`}>Plan and run</span>
         </div>
         <ol className="mt-3 space-y-2">
           {steps.slice(0, visible).map((s, i) => {
@@ -79,7 +79,7 @@ export default function HeroDemo() {
             return (
               <li key={s.title} className="rise flex items-center gap-3 rounded-xl border border-white/[0.08] bg-white/[0.03] px-3 py-2.5">
                 <span className="shrink-0">
-                  {st === "running" ? <Loader2 size={15} className="animate-spin text-[#8b7bff]" /> : st === "done" ? <CheckCircle2 size={15} className="text-[#16c47f]" /> : st === "review" ? <Eye size={15} className="text-[#f5b000]" /> : <CircleDashed size={15} className="text-white/40" />}
+                  {st === "running" ? <Loader2 size={15} className="animate-spin text-[#ee7a6f]" /> : st === "done" ? <CheckCircle2 size={15} className="text-[#4fb286]" /> : st === "review" ? <Eye size={15} className="text-[#e9b949]" /> : <CircleDashed size={15} className="text-white/40" />}
                 </span>
                 <span className="min-w-0 flex-1 truncate text-[13px] text-white/90">{s.title}</span>
                 <span className="hidden shrink-0 rounded-full px-2 py-0.5 text-[10px] sm:inline" style={{ color: color(s.dept), background: `${color(s.dept)}1f` }}>

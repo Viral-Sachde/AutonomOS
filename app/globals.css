@@ -1,43 +1,68 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
 /*
- * AutonomOS brand tokens.
+ * AutonomOS brand tokens (see /brand for the guidelines).
  *
- * The dashboard was built on the old game palette, so the legacy token names
- * (ink-black, gold, champagne...) are kept and remapped to the new brand:
- * a near-black neutral base, "Pulse" violet as the single accent, and one
- * colour per department.
+ * Fonts come from next/font in app/layout.tsx as CSS variables. The dashboard
+ * was built on an older palette, so its legacy token names (ink-black, gold,
+ * champagne...) are kept and mapped onto the brand: warm charcoal, Paper
+ * white, Ember coral as the one accent, and a secondary colour per department.
  */
-@theme {
-  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Geist", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Geist", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Geist Mono", ui-monospace, monospace;
-
-  --color-ink-black: #0b0b0e;
-  --color-twilight-indigo: #16161b;
-  --color-vintage-grape: #26262e;
-  --color-cool-steel: #9a9aa6;
-  --color-strawberry-red: #ff4d6d;
-  --color-deep-space-blue: #08080a;
-  --color-gold: #8b7bff;
-  --color-champagne: #f5f5f7;
-  --color-parchment: #ffffff;
-  --color-paper: #141418;
-  --color-emerald: #16c47f;
-
-  --color-pulse: #7c5cff;
-  --color-mkt: #ff6a3d;
-  --color-sales: #16c47f;
-  --color-intel: #3b82f6;
-  --color-ops: #f5b000;
+@theme inline {
+  --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-bricolage), var(--font-hanken), ui-sans-serif, sans-serif;
+  --font-display: var(--font-bricolage), var(--font-hanken), ui-sans-serif, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
 }
 
-/* Headings used a serif italic in the old palette. Geist has no italic, so
-   keep them upright, heavier and tighter instead of a synthesized slant. */
+@theme {
+  /* Brand */
+  --color-ember: #e0584c;
+  --color-ember-soft: #ee7a6f;
+  --color-ember-deep: #b8423a;
+  --color-coal: #121110;
+  --color-coal-2: #1a1918;
+  --color-coal-3: #24221f;
+  --color-ash: #a29d97;
+  --color-smoke: #6f6a64;
+  --color-paper-white: #f3efea;
+  --color-bone: #e8e2d9;
+
+  /* Departments (secondary palette) */
+  --color-mkt: #f28c5b;
+  --color-sales: #4fb286;
+  --color-intel: #7a9cf5;
+  --color-ops: #e9b949;
+  --color-pulse: #e0584c;
+
+  /* Legacy dashboard names, remapped */
+  --color-ink-black: #121110;
+  --color-twilight-indigo: #1b1a19;
+  --color-vintage-grape: #2a2826;
+  --color-cool-steel: #a29d97;
+  --color-strawberry-red: #ff6b5e;
+  --color-deep-space-blue: #0e0d0c;
+  --color-gold: #ee7a6f;
+  --color-champagne: #f3efea;
+  --color-parchment: #fffdf9;
+  --color-paper: #171615;
+  --color-emerald: #4fb286;
+}
+
+/* Dashboard headings used a serif italic in the old palette: keep them upright in the display grotesk. */
 .font-serif { font-weight: 600; letter-spacing: -0.03em; }
 .font-serif.italic { font-style: normal; }
+
+/* Film grain, the texture of the brand. Fixed so it does not scroll. */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
 
 * {
   -webkit-font-smoothing: antialiased;
@@ -45,14 +70,14 @@
 }
 
 body {
-  background: #08080a;
-  color: #f5f5f7;
+  background: #0e0d0c;
+  color: #f3efea;
 }
 
 .scrollbar-thin::-webkit-scrollbar { width: 4px; }
 .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
 .scrollbar-thin::-webkit-scrollbar-thumb {
-  background: rgba(139, 123, 255, 0.25);
+  background: rgba(238, 122, 111, 0.25);
   border-radius: 2px;
 }
 
@@ -62,14 +87,14 @@ body {
 }
 
 .shimmer {
-  background: linear-gradient(90deg, transparent 0%, rgba(139,123,255,0.08) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(238,122,111,0.08) 50%, transparent 100%);
   background-size: 200% 100%;
   animation: shimmer 2s infinite;
 }
 
 @keyframes pulse-gold {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(139, 123, 255, 0.4); }
-  50% { box-shadow: 0 0 0 8px rgba(139, 123, 255, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(238, 122, 111, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(238, 122, 111, 0); }
 }
 
 .pulse-gold {
@@ -87,3 +112,13 @@ body {
   to { opacity: 1; transform: none; }
 }
 .rise { animation: rise 0.35s ease-out both; }
+
+@keyframes ring-breathe {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(8deg) scale(1.02); }
+}
+.ring-breathe { animation: ring-breathe 14s ease-in-out infinite; transform-origin: center; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ring-breathe, .rise, .edge-live { animation: none !important; }
+}

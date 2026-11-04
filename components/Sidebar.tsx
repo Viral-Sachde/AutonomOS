@@ -31,7 +31,7 @@ type Item = { id: Tab; label: string; icon: typeof LayoutDashboard };
 const groups: { label: string; color?: string; items: Item[] }[] = [
   {
     label: "orchestrator",
-    color: "#7c5cff",
+    color: "#e0584c",
     items: [
       { id: "dashboard", label: "overview", icon: LayoutDashboard },
       { id: "command", label: "command", icon: Wand2 },
@@ -39,7 +39,7 @@ const groups: { label: string; color?: string; items: Item[] }[] = [
   },
   {
     label: "marketing",
-    color: "#ff6a3d",
+    color: "#f28c5b",
     items: [
       { id: "agents", label: "agents", icon: Bot },
       { id: "generate", label: "generate", icon: Sparkles },
@@ -49,9 +49,9 @@ const groups: { label: string; color?: string; items: Item[] }[] = [
       { id: "improvements", label: "improvements", icon: Lightbulb },
     ],
   },
-  { label: "sales", color: "#16c47f", items: [{ id: "sales", label: "pipeline", icon: Handshake }] },
-  { label: "intelligence", color: "#3b82f6", items: [{ id: "intelligence", label: "radar", icon: Radar }] },
-  { label: "operations", color: "#f5b000", items: [{ id: "operations", label: "board", icon: Workflow }] },
+  { label: "sales", color: "#4fb286", items: [{ id: "sales", label: "pipeline", icon: Handshake }] },
+  { label: "intelligence", color: "#7a9cf5", items: [{ id: "intelligence", label: "radar", icon: Radar }] },
+  { label: "operations", color: "#e9b949", items: [{ id: "operations", label: "board", icon: Workflow }] },
   { label: "system", items: [{ id: "usage", label: "credits", icon: DollarSign }] },
 ];
 
@@ -69,8 +69,8 @@ export default function Sidebar({ active, onChange, stats }: SidebarProps) {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/brand/mark.svg" alt="" width={36} height={36} className="rounded-[10px] ring-1 ring-white/10" />
           <div>
-            <p className="text-[17px] font-bold leading-none tracking-tight text-champagne">
-              Autonom<span className="text-gold">OS</span>
+            <p className="text-[17px] font-bold leading-none font-display tracking-[-0.04em] text-champagne">
+              autonom<span className="text-ember">OS</span>
             </p>
             <p className="mt-1 font-mono text-[9px] uppercase tracking-[1.5px] text-cool-steel">company orchestration</p>
           </div>

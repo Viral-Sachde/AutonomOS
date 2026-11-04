@@ -21,9 +21,15 @@ outreach) stop at "needs approval".
 
 | Route | What | Auth |
 |---|---|---|
-| `/` | Landing page | public |
-| `/brand` | Brand kit: marks, colours, type, voice | public |
+| `/` | Marketing site home | public |
+| `/product` | Product deep dive | public |
+| `/departments/[id]` | Marketing, Sales, Intelligence, Operations | public |
+| `/pricing` | Plans and comparison | public |
+| `/brand` | Brand guidelines and logo downloads | public |
 | `/dashboard` | The platform | behind login when `AUTH_*` is set |
+
+Only `/dashboard` and `/api/*` (except `/api/auth`) go through the auth
+middleware.
 
 ## Demo mode (default, $0)
 
@@ -38,11 +44,19 @@ below, and also falls back to templates when no key is set.
 
 ## Brand
 
-Logos live in `public/brand/` (`mark.svg`, `mark-light.svg`, `mark-pulse.svg`,
-`wordmark-*.svg` and one mark per department). Tokens are in
-`app/globals.css`: Ink `#0B0B0E`, Pulse `#7C5CFF`, and Marketing `#FF6A3D`,
-Sales `#16C47F`, Intelligence `#3B82F6`, Operations `#F5B000`. Type is Geist
-and Geist Mono. No em dashes in copy.
+The full guidelines live at `/brand`. In short:
+
+- **Mark:** the ring, an O with four soft lobes. The open centre is the
+  orchestrator, the lobes are the four departments. Geometry is generated
+  into `lib/brand-geometry.ts`; files are in `public/brand/`.
+- **Colour:** Ember `#E0584C` (the one accent), Coal `#121110` (canvas),
+  Paper `#F3EFEA` (text and light sections). Department colours are a warm
+  secondary palette: Marketing `#F28C5B`, Sales `#4FB286`, Intelligence
+  `#7A9CF5`, Operations `#E9B949`.
+- **Type:** Bricolage Grotesque (display), Hanken Grotesk (body), JetBrains
+  Mono (labels), loaded with `next/font` in `app/layout.tsx`.
+- **Texture:** 7% film grain and a soft Ember glow behind the subject.
+- **Voice:** plain, specific, calm, human in charge. No em dashes.
 
 ## Marketing department
 

@@ -173,7 +173,7 @@ export default function AgentsPanel({
         onClick={() => agents.filter((a) => a.enabled).forEach((a) => runAgent(a))}
         disabled={running.size > 0 || loading}
         className="flex items-center gap-2 px-5 py-3 bg-champagne text-ink-black text-sm font-bold tracking-wider lowercase hover:bg-gold transition-colors disabled:opacity-50"
-        style={{ boxShadow: "3px 3px 0 #8b7bff" }}
+        style={{ boxShadow: "3px 3px 0 #ee7a6f" }}
       >
         {running.size > 0 ? (
           <><Loader2 size={16} className="animate-spin" /> running {running.size} agents...</>
@@ -474,7 +474,7 @@ function AgentDetail({
             onClick={submitIdea}
             disabled={running}
             className="px-5 py-3 bg-champagne text-ink-black text-xs font-bold tracking-wider lowercase hover:bg-gold transition-colors disabled:opacity-50 whitespace-nowrap"
-            style={{ boxShadow: "3px 3px 0 #8b7bff" }}
+            style={{ boxShadow: "3px 3px 0 #ee7a6f" }}
           >
             {running ? (
               <span className="flex items-center gap-2"><Loader2 size={14} className="animate-spin" /> working</span>

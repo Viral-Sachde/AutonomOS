@@ -81,7 +81,7 @@ export default function CommandPanel() {
               <button
                 type="submit"
                 disabled={planning || !goal.trim()}
-                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-pulse px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#6a4cf0] disabled:opacity-50"
+                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-pulse px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#c94a3f] disabled:opacity-50"
               >
                 {planning ? <Loader2 size={16} className="animate-spin" /> : <Wand2 size={16} />}
                 Plan and run

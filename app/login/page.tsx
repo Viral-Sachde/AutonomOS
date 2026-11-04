@@ -55,8 +55,8 @@ function LoginForm() {
         <div className="mb-7">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/brand/mark.svg" alt="" width={44} height={44} className="mb-4 rounded-xl ring-1 ring-white/10" />
-          <h1 className="text-3xl font-bold tracking-tight text-champagne leading-tight">
-            Autonom<span className="text-gold">OS</span>
+          <h1 className="text-3xl font-bold font-display tracking-[-0.04em] text-champagne leading-tight">
+            autonom<span className="text-ember">OS</span>
           </h1>
           <p className="text-[11px] tracking-[2px] uppercase text-cool-steel mt-2">
             AI company orchestration platform
@@ -95,7 +95,7 @@ function LoginForm() {
           type="submit"
           disabled={busy || !user || !password}
           className="w-full flex items-center justify-center gap-2 py-3 bg-champagne text-ink-black text-sm font-bold tracking-wider lowercase hover:bg-gold transition-colors disabled:opacity-40"
-          style={{ boxShadow: "3px 3px 0 #8b7bff" }}
+          style={{ boxShadow: "3px 3px 0 #ee7a6f" }}
         >
           {busy ? (
             <><Loader2 size={15} className="animate-spin" /> checking</>

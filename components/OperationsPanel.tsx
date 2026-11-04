@@ -7,7 +7,7 @@ import { resetDemoData, useLocalState } from "./useLocalState";
 import { DEPARTMENTS, type OpsReport, type PlanTask, type TaskStatus } from "@/lib/departments";
 import { SEED_TASKS, SEED_WORKFLOWS, type Workflow } from "@/lib/demo-data";
 
-const AMBER = "#f5b000";
+const AMBER = "#e9b949";
 const COLUMNS: { id: TaskStatus; label: string }[] = [
   { id: "queued", label: "Queued" },
   { id: "running", label: "Running" },
