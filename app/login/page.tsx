@@ -15,7 +15,7 @@ export default function LoginPage() {
 function LoginForm() {
   const router = useRouter();
   const params = useSearchParams();
-  const next = params.get("next") || "/";
+  const next = params.get("next") || "/dashboard";
 
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
@@ -53,8 +53,10 @@ function LoginForm() {
         className="w-full max-w-sm border border-gold/15 bg-twilight-indigo/40 p-8"
       >
         <div className="mb-7">
-          <h1 className="font-serif italic text-3xl text-champagne leading-tight">
-            AutonomOS
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/brand/mark.svg" alt="" width={44} height={44} className="mb-4 rounded-xl ring-1 ring-white/10" />
+          <h1 className="text-3xl font-bold tracking-tight text-champagne leading-tight">
+            Autonom<span className="text-gold">OS</span>
           </h1>
           <p className="text-[11px] tracking-[2px] uppercase text-cool-steel mt-2">
             AI company orchestration platform
@@ -93,7 +95,7 @@ function LoginForm() {
           type="submit"
           disabled={busy || !user || !password}
           className="w-full flex items-center justify-center gap-2 py-3 bg-champagne text-ink-black text-sm font-bold tracking-wider lowercase hover:bg-gold transition-colors disabled:opacity-40"
-          style={{ boxShadow: "3px 3px 0 #c89858" }}
+          style={{ boxShadow: "3px 3px 0 #8b7bff" }}
         >
           {busy ? (
             <><Loader2 size={15} className="animate-spin" /> checking</>

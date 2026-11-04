@@ -1,22 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
+/*
+ * AutonomOS brand tokens.
+ *
+ * The dashboard was built on the old game palette, so the legacy token names
+ * (ink-black, gold, champagne...) are kept and remapped to the new brand:
+ * a near-black neutral base, "Pulse" violet as the single accent, and one
+ * colour per department.
+ */
 @theme {
-  --font-sans: "Lora", serif;
-  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
 
-  --color-ink-black: #141a3e;
-  --color-twilight-indigo: #1c2454;
-  --color-vintage-grape: #2d3a6e;
-  --color-cool-steel: #8a92b8;
-  --color-strawberry-red: #c8324a;
-  --color-deep-space-blue: #0d1d3d;
-  --color-gold: #c89858;
-  --color-champagne: #f4e8c8;
-  --color-parchment: #faf3e3;
-  --color-paper: #1f2858;
-  --color-emerald: #3fb083;
+  --color-ink-black: #0b0b0e;
+  --color-twilight-indigo: #16161b;
+  --color-vintage-grape: #26262e;
+  --color-cool-steel: #9a9aa6;
+  --color-strawberry-red: #ff4d6d;
+  --color-deep-space-blue: #08080a;
+  --color-gold: #8b7bff;
+  --color-champagne: #f5f5f7;
+  --color-parchment: #ffffff;
+  --color-paper: #141418;
+  --color-emerald: #16c47f;
+
+  --color-pulse: #7c5cff;
+  --color-mkt: #ff6a3d;
+  --color-sales: #16c47f;
+  --color-intel: #3b82f6;
+  --color-ops: #f5b000;
 }
+
+/* Headings used a serif italic in the old palette. Geist has no italic, so
+   keep them upright, heavier and tighter instead of a synthesized slant. */
+.font-serif { font-weight: 600; letter-spacing: -0.03em; }
+.font-serif.italic { font-style: normal; }
 
 * {
   -webkit-font-smoothing: antialiased;
@@ -24,14 +45,14 @@
 }
 
 body {
-  background: #0d1d3d;
-  color: #f4e8c8;
+  background: #08080a;
+  color: #f5f5f7;
 }
 
 .scrollbar-thin::-webkit-scrollbar { width: 4px; }
 .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
 .scrollbar-thin::-webkit-scrollbar-thumb {
-  background: rgba(200, 152, 88, 0.25);
+  background: rgba(139, 123, 255, 0.25);
   border-radius: 2px;
 }
 
@@ -41,16 +62,28 @@ body {
 }
 
 .shimmer {
-  background: linear-gradient(90deg, transparent 0%, rgba(200,152,88,0.08) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(139,123,255,0.08) 50%, transparent 100%);
   background-size: 200% 100%;
   animation: shimmer 2s infinite;
 }
 
 @keyframes pulse-gold {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(200, 152, 88, 0.4); }
-  50% { box-shadow: 0 0 0 8px rgba(200, 152, 88, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(139, 123, 255, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(139, 123, 255, 0); }
 }
 
 .pulse-gold {
   animation: pulse-gold 2s infinite;
 }
+
+@keyframes orbit-pulse {
+  0% { stroke-dashoffset: 24; }
+  100% { stroke-dashoffset: 0; }
+}
+.edge-live { stroke-dasharray: 4 8; animation: orbit-pulse 0.8s linear infinite; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+.rise { animation: rise 0.35s ease-out both; }

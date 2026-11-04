@@ -11,7 +11,10 @@ import { SESSION_COOKIE, verifySession, isAuthConfigured, timingSafeEqual } from
  * scheduler is recognised by its bearer token instead.
  */
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|login|api/auth).*)"],
+  // The landing page (/), the brand kit (/brand and its SVGs) and the favicon
+  // are public marketing surfaces. Everything else, including /dashboard and
+  // every API route, stays behind the gate.
+  matcher: ["/((?!_next/static|_next/image|favicon.ico|icon.svg|brand|login|api/auth).*)"],
 };
 
 /**
@@ -31,6 +34,8 @@ function isScheduler(req: NextRequest): boolean {
 }
 
 export async function middleware(req: NextRequest) {
+  if (req.nextUrl.pathname === "/") return NextResponse.next();
+
   // GitHub Actions authenticates with a token rather than a browser session.
   if (isScheduler(req)) return NextResponse.next();
 

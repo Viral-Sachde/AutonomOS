@@ -5,16 +5,50 @@ AI company orchestration platform.
 An **agent orchestration layer** that plans work, delegates tasks, coordinates
 agents and tracks outcomes across the company:
 
-| Department | Scope | Status |
-|---|---|---|
-| Marketing | Research, content, campaigns | Live |
-| Sales | Prospecting, outreach, CRM | Planned |
-| Intelligence | Competitors, markets, leads | Planned |
-| Operations | Tasks, workflows, reporting | Planned |
+| Department | Scope | Agents | Where |
+|---|---|---|---|
+| Marketing | Research, content, campaigns | 10 | `/dashboard#agents` |
+| Sales | Prospecting, outreach, CRM | 4 | `/dashboard#sales` |
+| Intelligence | Competitors, markets, leads | 4 | `/dashboard#intelligence` |
+| Operations | Tasks, workflows, reporting | 4 | `/dashboard#operations` |
 
-The marketing department below is the original Resistance Night marketing hub:
-ten AI agents that write, illustrate, review and publish Instagram content, with
-a Next.js dashboard where you approve everything before it ships.
+Give the orchestrator a goal at `/dashboard#command`. It plans the tasks, hands
+each one to a department agent in order, and the work moves across the
+operations board while you watch. Drafts that face customers (content and
+outreach) stop at "needs approval".
+
+## Routes
+
+| Route | What | Auth |
+|---|---|---|
+| `/` | Landing page | public |
+| `/brand` | Brand kit: marks, colours, type, voice | public |
+| `/dashboard` | The platform | behind login when `AUTH_*` is set |
+
+## Demo mode (default, $0)
+
+Sales, Intelligence, Operations and the orchestrator run on **built-in
+templates and seeded dummy data** and never call a paid model. Every company
+and person in the demo data is fictional. Changes you make in those modules are
+kept in your browser; "reset demo" on the Operations page restores the seed.
+
+To use a real model there instead, set `ORCHESTRATOR_AI=on` plus an
+`AI_PROVIDER` key. Marketing follows its own `AI_PROVIDER` setting, described
+below, and also falls back to templates when no key is set.
+
+## Brand
+
+Logos live in `public/brand/` (`mark.svg`, `mark-light.svg`, `mark-pulse.svg`,
+`wordmark-*.svg` and one mark per department). Tokens are in
+`app/globals.css`: Ink `#0B0B0E`, Pulse `#7C5CFF`, and Marketing `#FF6A3D`,
+Sales `#16C47F`, Intelligence `#3B82F6`, Operations `#F5B000`. Type is Geist
+and Geist Mono. No em dashes in copy.
+
+## Marketing department
+
+The marketing department is the original Resistance Night marketing hub: ten
+AI agents that write, illustrate, review and publish Instagram content, with
+approval before anything ships. The rest of this README covers its setup.
 
 ---
 
