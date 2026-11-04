@@ -1,0 +1,362 @@
+{
+  "timezone": "Asia/Kolkata",
+  "items": [
+    {
+      "id": "2026-10-06-post",
+      "date": "2026-10-06",
+      "slot": "post",
+      "type": "post",
+      "time": "15:00",
+      "scheduledFor": "2026-10-06T09:30:00.000Z",
+      "title": "trust is the only weapon",
+      "file": "2026-10-06/2026-10-06-post.jpg",
+      "caption": "five players. two traitors. one night to find out who.\n\nresistance night is the social deduction game for your next game night. pass the phone, peek at your role, and start lying.\n\nsave this for friday.",
+      "hashtags": [
+        "#resistancenight",
+        "#socialdeduction",
+        "#partygame",
+        "#gamenight",
+        "#boardgamenight"
+      ]
+    },
+    {
+      "id": "2026-10-06-story",
+      "date": "2026-10-06",
+      "slot": "story",
+      "type": "story",
+      "time": "20:00",
+      "scheduledFor": "2026-10-06T14:30:00.000Z",
+      "title": "trust teaser",
+      "file": "2026-10-06/2026-10-06-story.jpg",
+      "caption": "Post date: 2026-10-06\nSticker: ADD COUNTDOWN STICKER · FRIDAY 8PM\nAdd a Countdown sticker to Friday 8pm. Link sticker: app store page.",
+      "hashtags": [
+        "#resistancenight"
+      ]
+    },
+    {
+      "id": "2026-10-07-post",
+      "date": "2026-10-07",
+      "slot": "post",
+      "type": "post",
+      "time": "15:00",
+      "scheduledFor": "2026-10-07T09:30:00.000Z",
+      "title": "merlin",
+      "file": "2026-10-06/2026-10-07-post.jpg",
+      "caption": "merlin knows who the traitors are. the problem? he can't say it out loud.\n\nhint too hard and the assassin takes his one shot.\n\nwould you survive as merlin? comment below.",
+      "hashtags": [
+        "#resistancenight",
+        "#merlin",
+        "#socialdeduction",
+        "#partygame",
+        "#boardgames"
+      ]
+    },
+    {
+      "id": "2026-10-07-story",
+      "date": "2026-10-07",
+      "slot": "story",
+      "type": "story",
+      "time": "20:00",
+      "scheduledFor": "2026-10-07T14:30:00.000Z",
+      "title": "poll merlin",
+      "file": "2026-10-06/2026-10-07-story.jpg",
+      "caption": "Post date: 2026-10-07\nSticker: POLL STICKER · YES / NO WAY\nPoll sticker: 'Yes' / 'No way'.",
+      "hashtags": [
+        "#resistancenight"
+      ]
+    },
+    {
+      "id": "2026-10-08-post",
+      "date": "2026-10-08",
+      "slot": "post",
+      "type": "post",
+      "time": "15:00",
+      "scheduledFor": "2026-10-08T09:30:00.000Z",
+      "title": "morgana",
+      "file": "2026-10-06/2026-10-08-post.jpg",
+      "caption": "percival sees two merlins. only one is real.\n\nmorgana's whole job is to look like the wizard. one of them is leading you straight into a trap.\n\nwho would you follow? A or B, comment below.",
+      "hashtags": [
+        "#resistancenight",
+        "#morgana",
+        "#percival",
+        "#socialdeduction",
+        "#gamenight"
+      ]
+    },
+    {
+      "id": "2026-10-08-reel",
+      "date": "2026-10-08",
+      "slot": "reel",
+      "type": "reel",
+      "time": "18:00",
+      "scheduledFor": "2026-10-08T12:30:00.000Z",
+      "title": "two are lying",
+      "file": "2026-10-06/2026-10-08-reel.mp4",
+      "caption": "five players. two are lying.\n\ncan you tell which?\n\ntag the friend who lies the best.",
+      "hashtags": [
+        "#resistancenight",
+        "#partygame",
+        "#socialdeduction",
+        "#gamenight",
+        "#boardgamenight",
+        "#reels"
+      ]
+    },
+    {
+      "id": "2026-10-08-story",
+      "date": "2026-10-08",
+      "slot": "story",
+      "type": "story",
+      "time": "20:00",
+      "scheduledFor": "2026-10-08T14:30:00.000Z",
+      "title": "morgana quiz",
+      "file": "2026-10-06/2026-10-08-story.jpg",
+      "caption": "Post date: 2026-10-08\nSticker: QUIZ STICKER · LEFT / RIGHT (RIGHT IS MORGANA)\nQuiz sticker with two options Left / Right. Reveal answer next story with Morgana line.",
+      "hashtags": [
+        "#resistancenight"
+      ]
+    },
+    {
+      "id": "2026-10-09-post",
+      "date": "2026-10-09",
+      "slot": "post",
+      "type": "post",
+      "time": "15:00",
+      "scheduledFor": "2026-10-09T09:30:00.000Z",
+      "title": "one fail sinks it",
+      "file": "2026-10-06/2026-10-09-post.jpg",
+      "caption": "pass. pass. fail.\n\nin resistance night, one secret fail card sinks the whole quest. so who do you let onto the team?\n\nsave this for your next game night.",
+      "hashtags": [
+        "#resistancenight",
+        "#questcards",
+        "#partygame",
+        "#socialdeduction",
+        "#boardgamenight"
+      ]
+    },
+    {
+      "id": "2026-10-09-reel",
+      "date": "2026-10-09",
+      "slot": "reel",
+      "type": "reel",
+      "time": "18:00",
+      "scheduledFor": "2026-10-09T12:30:00.000Z",
+      "title": "merlin",
+      "file": "2026-10-06/2026-10-09-reel.mp4",
+      "caption": "merlin knows who the traitors are. he just can't say it.\n\nhint too hard and the assassin takes his shot.\n\nwould you survive as merlin?",
+      "hashtags": [
+        "#resistancenight",
+        "#partygame",
+        "#socialdeduction",
+        "#gamenight",
+        "#boardgamenight",
+        "#reels"
+      ]
+    },
+    {
+      "id": "2026-10-09-story",
+      "date": "2026-10-09",
+      "slot": "story",
+      "type": "story",
+      "time": "20:00",
+      "scheduledFor": "2026-10-09T14:30:00.000Z",
+      "title": "pass or fail",
+      "file": "2026-10-06/2026-10-09-story.jpg",
+      "caption": "Post date: 2026-10-09\nSticker: POLL STICKER · PASS / FAIL\nPoll sticker: 'Pass (stay hidden)' / 'Fail (sink it)'.",
+      "hashtags": [
+        "#resistancenight"
+      ]
+    },
+    {
+      "id": "2026-10-10-post",
+      "date": "2026-10-10",
+      "slot": "post",
+      "type": "post",
+      "time": "15:00",
+      "scheduledFor": "2026-10-10T09:30:00.000Z",
+      "title": "first to three",
+      "file": "2026-10-06/2026-10-10-post.jpg",
+      "caption": "first to three quests wins. but the game is never over until the assassin has taken their shot at merlin.\n\nnew to the game? tap the link in bio to start your first round.",
+      "hashtags": [
+        "#resistancenight",
+        "#howtoplay",
+        "#partygame",
+        "#socialdeduction",
+        "#gamenight"
+      ]
+    },
+    {
+      "id": "2026-10-10-reel",
+      "date": "2026-10-10",
+      "slot": "reel",
+      "type": "reel",
+      "time": "18:00",
+      "scheduledFor": "2026-10-10T12:30:00.000Z",
+      "title": "morgana",
+      "file": "2026-10-06/2026-10-10-reel.mp4",
+      "caption": "percival sees two merlins. only one is real.\n\nwho would you follow?",
+      "hashtags": [
+        "#resistancenight",
+        "#partygame",
+        "#socialdeduction",
+        "#gamenight",
+        "#boardgamenight",
+        "#reels"
+      ]
+    },
+    {
+      "id": "2026-10-10-story",
+      "date": "2026-10-10",
+      "slot": "story",
+      "type": "story",
+      "time": "20:00",
+      "scheduledFor": "2026-10-10T14:30:00.000Z",
+      "title": "ask me anything",
+      "file": "2026-10-06/2026-10-10-story.jpg",
+      "caption": "Post date: 2026-10-10\nSticker: QUESTIONS STICKER\nQuestions sticker. Answer the best ones in next story slides.",
+      "hashtags": [
+        "#resistancenight"
+      ]
+    },
+    {
+      "id": "2026-10-11-post",
+      "date": "2026-10-11",
+      "slot": "post",
+      "type": "post",
+      "time": "15:00",
+      "scheduledFor": "2026-10-11T09:30:00.000Z",
+      "title": "good or evil",
+      "file": "2026-10-06/2026-10-11-post.jpg",
+      "caption": "be honest: which side do you secretly love playing?\n\ngood is about trust. evil is about the perfect lie.\n\ncomment GOOD or EVIL, then tag the friend who bluffs the best.",
+      "hashtags": [
+        "#resistancenight",
+        "#goodorevil",
+        "#partygame",
+        "#socialdeduction",
+        "#gamenight"
+      ]
+    },
+    {
+      "id": "2026-10-11-reel",
+      "date": "2026-10-11",
+      "slot": "reel",
+      "type": "reel",
+      "time": "18:00",
+      "scheduledFor": "2026-10-11T12:30:00.000Z",
+      "title": "one fail",
+      "file": "2026-10-06/2026-10-11-reel.mp4",
+      "caption": "pass. pass. fail.\n\none secret card sinks the whole quest.\n\nsave this for game night.",
+      "hashtags": [
+        "#resistancenight",
+        "#partygame",
+        "#socialdeduction",
+        "#gamenight",
+        "#boardgamenight",
+        "#reels"
+      ]
+    },
+    {
+      "id": "2026-10-11-story",
+      "date": "2026-10-11",
+      "slot": "story",
+      "type": "story",
+      "time": "20:00",
+      "scheduledFor": "2026-10-11T14:30:00.000Z",
+      "title": "good or evil",
+      "file": "2026-10-06/2026-10-11-story.jpg",
+      "caption": "Post date: 2026-10-11\nSticker: EMOJI SLIDER · 😇 ↔ 😈\nEmoji slider with 😈, or poll Good / Evil.",
+      "hashtags": [
+        "#resistancenight"
+      ]
+    },
+    {
+      "id": "2026-10-12-post",
+      "date": "2026-10-12",
+      "slot": "post",
+      "type": "post",
+      "time": "15:00",
+      "scheduledFor": "2026-10-12T09:30:00.000Z",
+      "title": "the lovers",
+      "file": "2026-10-06/2026-10-12-post.jpg",
+      "caption": "the lovers know each other from the start. the trick is proving you're good without exposing the pair to the assassin.\n\ntag your game night partner. you two are definitely lovers.",
+      "hashtags": [
+        "#resistancenight",
+        "#thelovers",
+        "#socialdeduction",
+        "#partygame",
+        "#boardgames"
+      ]
+    },
+    {
+      "id": "2026-10-12-reel",
+      "date": "2026-10-12",
+      "slot": "reel",
+      "type": "reel",
+      "time": "18:00",
+      "scheduledFor": "2026-10-12T12:30:00.000Z",
+      "title": "night falls",
+      "file": "2026-10-06/2026-10-12-reel.mp4",
+      "caption": "at night, evil learns who evil is.\n\neyes closed. thumbs up. nobody peek.\n\nsend this to your game night group.",
+      "hashtags": [
+        "#resistancenight",
+        "#partygame",
+        "#socialdeduction",
+        "#gamenight",
+        "#boardgamenight",
+        "#reels"
+      ]
+    },
+    {
+      "id": "2026-10-12-story",
+      "date": "2026-10-12",
+      "slot": "story",
+      "type": "story",
+      "time": "20:00",
+      "scheduledFor": "2026-10-12T14:30:00.000Z",
+      "title": "play sunday",
+      "file": "2026-10-06/2026-10-12-story.jpg",
+      "caption": "Post date: 2026-10-12\nSticker: LINK STICKER · GET THE APP\nLink sticker to the store page. Reshare any DMs/tags from the week.",
+      "hashtags": [
+        "#resistancenight"
+      ]
+    },
+    {
+      "id": "2026-10-13-reel",
+      "date": "2026-10-13",
+      "slot": "reel",
+      "type": "reel",
+      "time": "18:00",
+      "scheduledFor": "2026-10-13T12:30:00.000Z",
+      "title": "one shot",
+      "file": "2026-10-06/2026-10-13-reel.mp4",
+      "caption": "good wins three quests. but the game isn't over.\n\nthe assassin gets one shot at merlin.\n\ncomment if you've ever lost it on the last shot.",
+      "hashtags": [
+        "#resistancenight",
+        "#partygame",
+        "#socialdeduction",
+        "#gamenight",
+        "#boardgamenight",
+        "#reels"
+      ]
+    },
+    {
+      "id": "2026-10-14-reel",
+      "date": "2026-10-14",
+      "slot": "reel",
+      "type": "reel",
+      "time": "18:00",
+      "scheduledFor": "2026-10-14T12:30:00.000Z",
+      "title": "which role",
+      "file": "2026-10-06/2026-10-14-reel.mp4",
+      "caption": "eight roles. everyone is hiding something.\n\nwhich one do you always get stuck with?",
+      "hashtags": [
+        "#resistancenight",
+        "#partygame",
+        "#socialdeduction",
+        "#gamenight",
+        "#boardgamenight",
+        "#reels"
+      ]
+    }
+  ]
+}

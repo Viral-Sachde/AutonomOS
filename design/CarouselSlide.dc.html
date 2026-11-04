@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Lora:wght@400;500;600;700&display=swap">
+  <style>
+    body { margin: 0; font-family: 'Lora', Georgia, serif; }
+    a { color: #c89858; } a:hover { color: #f4e8c8; }
+  </style>
+</helmet>
+<div style="width: 1080px; height: 1080px; background: #141a3e; position: relative; overflow: hidden;">
+
+  <!-- Corner ornaments -->
+  <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;" viewBox="0 0 1080 1080">
+    <!-- Top-left corner -->
+    <path d="M30 30 L30 120" stroke="#c89858" stroke-width="2" opacity="0.6"/>
+    <path d="M30 30 L120 30" stroke="#c89858" stroke-width="2" opacity="0.6"/>
+    <circle cx="30" cy="30" r="4" fill="#c89858" opacity="0.7"/>
+    <!-- Top-right corner -->
+    <path d="M1050 30 L1050 120" stroke="#c89858" stroke-width="2" opacity="0.6"/>
+    <path d="M1050 30 L960 30" stroke="#c89858" stroke-width="2" opacity="0.6"/>
+    <circle cx="1050" cy="30" r="4" fill="#c89858" opacity="0.7"/>
+    <!-- Bottom-left corner -->
+    <path d="M30 1050 L30 960" stroke="#c89858" stroke-width="2" opacity="0.6"/>
+    <path d="M30 1050 L120 1050" stroke="#c89858" stroke-width="2" opacity="0.6"/>
+    <circle cx="30" cy="1050" r="4" fill="#c89858" opacity="0.7"/>
+    <!-- Bottom-right corner -->
+    <path d="M1050 1050 L1050 960" stroke="#c89858" stroke-width="2" opacity="0.6"/>
+    <path d="M1050 1050 L960 1050" stroke="#c89858" stroke-width="2" opacity="0.6"/>
+    <circle cx="1050" cy="1050" r="4" fill="#c89858" opacity="0.7"/>
+  </svg>
+
+  <!-- Inner gold border -->
+  <div style="position: absolute; top: 50px; left: 50px; right: 50px; bottom: 50px; border: 1px solid rgba(200,152,88,0.25);"></div>
+
+  <!-- Stars -->
+  <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;" viewBox="0 0 1080 1080">
+    <circle cx="180" cy="100" r="1.5" fill="#f4e8c8" opacity="0.3"/>
+    <circle cx="420" cy="80" r="2" fill="#f4e8c8" opacity="0.4"/>
+    <circle cx="700" cy="120" r="1.5" fill="#f4e8c8" opacity="0.3"/>
+    <circle cx="900" cy="90" r="2" fill="#f4e8c8" opacity="0.35"/>
+    <circle cx="300" cy="950" r="1" fill="#f4e8c8" opacity="0.2"/>
+    <circle cx="780" cy="970" r="1.5" fill="#f4e8c8" opacity="0.25"/>
+  </svg>
+
+  <!-- Slide number -->
+  <div style="position: absolute; top: 70px; left: 80px;">
+    <div style="font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: 120px; color: #c89858; opacity: 0.15; line-height: 1;">{{slideNum}}</div>
+  </div>
+
+  <!-- Branding top-right -->
+  <div style="position: absolute; top: 75px; right: 80px; display: flex; align-items: center; gap: 10px;">
+    <svg width="22" height="22" viewBox="0 0 28 28">
+      <path d="M14 2 L17 10 L26 10 L19 15 L22 24 L14 19 L6 24 L9 15 L2 10 L11 10 Z" fill="#c89858"/>
+    </svg>
+    <div style="font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: 16px; color: #f4e8c8; opacity: 0.7;">the resistance night</div>
+  </div>
+
+  <!-- Eyebrow label -->
+  <div style="position: absolute; top: 240px; left: 80px; right: 80px; text-align: center;">
+    <span style="font-family: 'Lora', Georgia, serif; font-size: 16px; color: #c89858; letter-spacing: 4px; text-transform: uppercase;">{{eyebrow}}</span>
+  </div>
+
+  <!-- Main title -->
+  <div style="position: absolute; top: 290px; left: 80px; right: 80px; text-align: center;">
+    <div style="font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: 64px; color: #f4e8c8; line-height: 1.1;">{{title}}</div>
+  </div>
+
+  <!-- Divider -->
+  <svg style="position: absolute; top: 520px; left: 50%; transform: translateX(-50%); width: 200px; height: 20px;" viewBox="0 0 200 20">
+    <line x1="10" y1="10" x2="80" y2="10" stroke="#c89858" stroke-width="1" opacity="0.4"/>
+    <line x1="120" y1="10" x2="190" y2="10" stroke="#c89858" stroke-width="1" opacity="0.4"/>
+    <circle cx="100" cy="10" r="4" fill="none" stroke="#c89858" stroke-width="1" opacity="0.5"/>
+  </svg>
+
+  <!-- Body content -->
+  <div style="position: absolute; top: 570px; left: 100px; right: 100px; text-align: center;">
+    <p style="font-family: 'Lora', Georgia, serif; font-size: 24px; color: #8a92b8; line-height: 1.6; margin: 0;">{{content}}</p>
+  </div>
+
+  <!-- Navigation dots -->
+  <div style="position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%); display: flex; gap: 16px; align-items: center;">
+    <div style="width: 10px; height: 10px; border-radius: 50%; background: #c89858;"></div>
+    <div style="width: 8px; height: 8px; border-radius: 50%; border: 1px solid #c89858; opacity: 0.4;"></div>
+    <div style="width: 8px; height: 8px; border-radius: 50%; border: 1px solid #c89858; opacity: 0.4;"></div>
+    <div style="width: 8px; height: 8px; border-radius: 50%; border: 1px solid #c89858; opacity: 0.4;"></div>
+    <div style="width: 8px; height: 8px; border-radius: 50%; border: 1px solid #c89858; opacity: 0.4;"></div>
+  </div>
+
+  <!-- Swipe hint -->
+  <div style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);">
+    <span style="font-family: 'Lora', Georgia, serif; font-size: 12px; color: #8a92b8; opacity: 0.4; letter-spacing: 2px; text-transform: uppercase;">swipe</span>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"slideNum":{"editor":"text","default":"01"},"eyebrow":{"editor":"text","default":"Role Spotlight"},"title":{"editor":"text","default":"The Assassin"},"content":{"editor":"text","default":"Silent. Calculating. One wrong guess at Merlin and the forces of evil prevail. The Assassin watches, waits, and strikes when the moment is right."},"$preview":{"width":1080,"height":1080}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      slideNum: this.props.slideNum ?? '01',
+      eyebrow: this.props.eyebrow ?? 'Role Spotlight',
+      title: this.props.title ?? 'The Assassin',
+      content: this.props.content ?? 'Silent. Calculating. One wrong guess at Merlin and the forces of evil prevail. The Assassin watches, waits, and strikes when the moment is right.',
+    };
+  }
+}
+</script>
+</body>
+</html>

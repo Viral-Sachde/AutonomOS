@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Lora:wght@400;500;600;700&display=swap">
+  <style>
+    body { margin: 0; font-family: 'Lora', Georgia, serif; }
+    a { color: #c89858; } a:hover { color: #f4e8c8; }
+  </style>
+</helmet>
+<div style="width: 1080px; height: 1080px; background: #141a3e; position: relative; overflow: hidden;">
+
+  <!-- Stars -->
+  <svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;" viewBox="0 0 1080 1080">
+    <circle cx="120" cy="80" r="2" fill="#f4e8c8" opacity="0.4"/>
+    <circle cx="340" cy="140" r="1.5" fill="#f4e8c8" opacity="0.3"/>
+    <circle cx="560" cy="60" r="2.5" fill="#f4e8c8" opacity="0.5"/>
+    <circle cx="780" cy="110" r="1.5" fill="#f4e8c8" opacity="0.35"/>
+    <circle cx="950" cy="70" r="2" fill="#f4e8c8" opacity="0.4"/>
+    <circle cx="200" cy="200" r="1" fill="#f4e8c8" opacity="0.25"/>
+    <circle cx="880" cy="180" r="1.5" fill="#f4e8c8" opacity="0.3"/>
+    <circle cx="450" cy="250" r="1" fill="#f4e8c8" opacity="0.2"/>
+  </svg>
+
+  <!-- Crescent moon -->
+  <svg style="position: absolute; top: 40px; right: 60px; width: 90px; height: 90px;" viewBox="0 0 90 90">
+    <circle cx="45" cy="45" r="32" fill="#c89858" opacity="0.9"/>
+    <circle cx="55" cy="38" r="24" fill="#141a3e"/>
+  </svg>
+
+  <!-- Arch frame -->
+  <svg style="position: absolute; top: 100px; left: 50%; transform: translateX(-50%); width: 640px; height: 620px;" viewBox="0 0 640 620">
+    <path d="M40 620 L40 240 Q40 40 320 40 Q600 40 600 240 L600 620" fill="none" stroke="#c89858" stroke-width="3" opacity="0.8"/>
+    <path d="M60 620 L60 250 Q60 60 320 60 Q580 60 580 250 L580 620" fill="none" stroke="#c89858" stroke-width="1" opacity="0.3"/>
+  </svg>
+
+  <!-- Role silhouette area -->
+  <svg style="position: absolute; top: 180px; left: 50%; transform: translateX(-50%); width: 400px; height: 400px;" viewBox="0 0 400 400">
+    <!-- Riso offset -->
+    <g transform="translate(6 6)" opacity="0.3">
+      <ellipse cx="200" cy="140" rx="65" ry="78" fill="#c89858"/>
+      <path d="M120 400 Q140 260 200 250 Q260 260 280 400 Z" fill="#c89858"/>
+    </g>
+    <!-- Figure -->
+    <ellipse cx="200" cy="140" rx="65" ry="78" fill="#0d1d3d"/>
+    <path d="M120 400 Q140 260 200 250 Q260 260 280 400 Z" fill="#1c2454"/>
+    <!-- Eyes -->
+    <circle cx="182" cy="130" r="5" fill="#c89858" opacity="0.8"/>
+    <circle cx="218" cy="130" r="5" fill="#c89858" opacity="0.8"/>
+    <!-- Clasp -->
+    <circle cx="200" cy="280" r="16" fill="#0d1d3d" stroke="#c89858" stroke-width="2"/>
+    <circle cx="200" cy="280" r="6" fill="#c89858" opacity="0.7"/>
+    <!-- Star sigil above head -->
+    <path d="M200 30 L206 50 L226 50 L210 62 L216 82 L200 70 L184 82 L190 62 L174 50 L194 50 Z" fill="#c89858" opacity="0.6"/>
+  </svg>
+
+  <!-- Role name -->
+  <div style="position: absolute; bottom: 300px; left: 0; right: 0; text-align: center;">
+    <div style="font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: 72px; color: #f4e8c8; line-height: 1;">{{roleName}}</div>
+    <div style="font-family: 'Lora', Georgia, serif; font-size: 18px; color: #c89858; letter-spacing: 3px; text-transform: uppercase; margin-top: 12px;">{{roleTagline}}</div>
+  </div>
+
+  <!-- Divider -->
+  <svg style="position: absolute; bottom: 260px; left: 50%; transform: translateX(-50%); width: 300px; height: 20px;" viewBox="0 0 300 20">
+    <line x1="20" y1="10" x2="130" y2="10" stroke="#c89858" stroke-width="1" opacity="0.5"/>
+    <line x1="170" y1="10" x2="280" y2="10" stroke="#c89858" stroke-width="1" opacity="0.5"/>
+    <path d="M140 4 L150 10 L160 4 L160 16 L150 10 L140 16 Z" fill="#c89858" opacity="0.7"/>
+  </svg>
+
+  <!-- Caption area -->
+  <div style="position: absolute; bottom: 120px; left: 80px; right: 80px; text-align: center;">
+    <p style="font-family: 'Lora', Georgia, serif; font-size: 22px; color: #8a92b8; line-height: 1.6; margin: 0;">{{caption}}</p>
+  </div>
+
+  <!-- Hashtag strip -->
+  <div style="position: absolute; bottom: 50px; left: 60px; right: 60px; text-align: center;">
+    <span style="font-family: 'Lora', Georgia, serif; font-size: 14px; color: #c89858; opacity: 0.6; letter-spacing: 1px;">{{hashtags}}</span>
+  </div>
+
+  <!-- Branding bar -->
+  <div style="position: absolute; top: 45px; left: 60px; display: flex; align-items: center; gap: 12px;">
+    <svg width="28" height="28" viewBox="0 0 28 28">
+      <path d="M14 2 L17 10 L26 10 L19 15 L22 24 L14 19 L6 24 L9 15 L2 10 L11 10 Z" fill="#c89858"/>
+    </svg>
+    <div style="font-family: 'Instrument Serif', Georgia, serif; font-style: italic; font-size: 20px; color: #f4e8c8;">the resistance night</div>
+  </div>
+
+  <!-- Castle silhouette bottom -->
+  <svg style="position: absolute; bottom: 0; left: 0; width: 100%; height: 80px; pointer-events: none;" viewBox="0 0 1080 80">
+    <g fill="#0d1d3d" opacity="0.4">
+      <rect x="0" y="30" width="1080" height="50"/>
+      <rect x="60" y="15" width="30" height="15"/>
+      <rect x="140" y="5" width="35" height="25"/>
+      <rect x="250" y="10" width="40" height="20"/>
+      <rect x="800" y="8" width="35" height="22"/>
+      <rect x="900" y="12" width="30" height="18"/>
+      <rect x="1000" y="5" width="40" height="25"/>
+    </g>
+  </svg>
+</div>
+</x-dc>
+<script data-dc-script data-props='{"roleName":{"editor":"text","default":"Merlin"},"roleTagline":{"editor":"text","default":"the all-seeing wizard"},"caption":{"editor":"text","default":"the one who knows everything, yet must say nothing."},"hashtags":{"editor":"text","default":"#TheResistanceNight #HiddenRoles #PartyGame #SocialDeduction"},"accent":{"editor":"color","default":"#c89858","options":["#c89858","#c8324a","#3fb083","#8a92b8"]},"$preview":{"width":1080,"height":1080}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      roleName: this.props.roleName ?? 'Merlin',
+      roleTagline: this.props.roleTagline ?? 'the all-seeing wizard',
+      caption: this.props.caption ?? 'the one who knows everything, yet must say nothing.',
+      hashtags: this.props.hashtags ?? '#TheResistanceNight #HiddenRoles #PartyGame #SocialDeduction',
+    };
+  }
+}
+</script>
+</body>
+</html>
