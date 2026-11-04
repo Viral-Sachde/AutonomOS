@@ -14,7 +14,7 @@ the same three posts forever. This prompt fixes the look, role and theme from th
 - the three cycles are coprime-ish, so the *combination* takes months to recur
 
 Paste your last few opening lines into the `RECENT HOOKS` slot and it will avoid
-those too. That is the belt-and-braces part — the date rotation does the work.
+those too. That is the belt-and-braces part, the date rotation does the work.
 
 ---
 
@@ -179,7 +179,7 @@ npx tsx scripts-preview.ts ./out <look-id>
 ```
 
 Or paste the whole ChatGPT output into the **your idea** box on any agent in the
-dashboard and run it — the agent will build from it and render the artwork.
+dashboard and run it, the agent will build from it and render the artwork.
 
 ## If the output drifts
 

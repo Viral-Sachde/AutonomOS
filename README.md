@@ -44,7 +44,7 @@ Free tier covers this comfortably.
 3. **Settings > API** gives you the project URL and the `service_role` key.
    Set `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY`.
 
-> The service-role key bypasses row-level security. It is server-side only —
+> The service-role key bypasses row-level security. It is server-side only:
 > never prefix it with `NEXT_PUBLIC_`. RLS is enabled on every table with no
 > policies, so the anon key (the one that leaks first) can read nothing.
 
@@ -121,7 +121,7 @@ openssl rand -hex 32     # AUTH_SECRET
 ```
 
 Set `AUTH_USER`, `AUTH_PASSWORD` and `AUTH_SECRET`. While **any** of the three
-is unset the dashboard stays open — that is the local-dev behaviour, and it is
+is unset the dashboard stays open, that is the local-dev behaviour, and it is
 not safe in production.
 
 Sessions are an HMAC-signed cookie with a 7-day expiry baked into the signed
@@ -132,19 +132,19 @@ Vercel Cron calls it with a bearer token, not a browser session.
 ### 7. Instagram (optional)
 
 Auto-publishing needs a **Business or Creator** account linked to a Facebook
-Page — a personal account cannot use this API. Get a long-lived token and your
+Page, a personal account cannot use this API. Get a long-lived token and your
 IG business account id from the Meta Graph API, then set
 `INSTAGRAM_ACCESS_TOKEN` and `INSTAGRAM_BUSINESS_ACCOUNT_ID`.
 
-Until you do, everything still works — you review and approve in the dashboard
+Until you do, everything still works, you review and approve in the dashboard
 and post the generated image yourself.
 
 ### 8. Turn on AI (optional)
 
 | Provider | Cost at this app's volume | Set |
 |---|---|---|
-| none | **$0** — templates only | `AI_PROVIDER=none` |
-| Gemini | $0 — free tier | `GEMINI_API_KEY` |
+| none | **$0**: templates only | `AI_PROVIDER=none` |
+| Gemini | $0: free tier | `GEMINI_API_KEY` |
 | Claude Haiku 4.5 | ~$0.85/mo | `ANTHROPIC_API_KEY` (this is the default) |
 | Claude Opus 5 | ~$4.25/mo | `ANTHROPIC_API_KEY` + `CLAUDE_MODEL=claude-opus-5` |
 
@@ -160,17 +160,17 @@ Haiku 4.5 and Sonnet 4.5 reject `output_config.effort` and adaptive thinking, so
 
 ## Using it
 
-**Agents tab** — all ten agents. Each one has a switch (off means the cron skips
+**Agents tab**: all ten agents. Each one has a switch (off means the cron skips
 it) and opens into its own page showing only what it made.
 
-**Your idea box** — on every agent. Type a thought, hit generate, and it builds
+**Your idea box**: on every agent. Type a thought, hit generate, and it builds
 from your angle instead of picking its own.
 
-**Regenerate / Alter** — on every piece of content. Regenerate gets a fresh take
+**Regenerate / Alter**: on every piece of content. Regenerate gets a fresh take
 on the same brief. Alter edits *this* copy against a note like "make it shorter"
 or "aim it at gen z".
 
-**Duplicate checker** — before anything is stored, it is compared against the
+**Duplicate checker**: before anything is stored, it is compared against the
 last two months of content of the same type. Anything scoring ≥55% similar is
 dropped and reported. Note this is a lexical check (word and character overlap):
 it reliably catches reworded repeats, but two posts making the same point in
@@ -242,7 +242,7 @@ with the deploy; `creatives/_tools/schedule_week.cjs <start-date>` restages a ne
 | `POST /api/approve` | `{id, action: "approve" \| "reject"}` |
 | `POST /api/publish` | render images, then post to Instagram |
 | `GET /api/agents` | agent list with on/off state and counts |
-| `POST /api/agents` | `{id, enabled}` — flip an agent's switch |
+| `POST /api/agents` | `{id, enabled}`: flip an agent's switch |
 | `GET /api/cron/<agent>` | scheduled run (honours the switch) |
 | `POST /api/cron/<agent>` | manual run with `{steer}`, ignores the switch |
 
@@ -253,7 +253,7 @@ with the deploy; `creatives/_tools/schedule_week.cjs <start-date>` restages a ne
 - **Reels are scripts, not video.** The agent writes shot-by-shot scripts and
   renders a cover image; it does not produce an MP4. Reel publishing needs a
   hosted video URL you supply yourself.
-- **"Push to GitHub" on improvements only records the decision** — it marks the
+- **"Push to GitHub" on improvements only records the decision**, it marks the
   item pushed and logs it. It does not open a PR against the game repo.
 - **Analytics are illustrative.** Nothing reads real Instagram Insights yet.
 - **Error tracking is `console.error`.** Failures land in Vercel's function logs

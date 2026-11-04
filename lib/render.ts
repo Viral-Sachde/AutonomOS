@@ -271,7 +271,7 @@ function truncateTo(text: string, spec: TypeSpec, maxWidth: number, maxLines: nu
 
   const last = lines.length - 1;
   if (lines.join(" ").length < clean.length) {
-    let candidate = lines[last].replace(/[,.;:—-]+$/, "");
+    let candidate = lines[last].replace(/[,.;:\u2014-]+$/, "");
     while (candidate.includes(" ") && textWidth(candidate + "…", spec) > maxWidth) {
       candidate = candidate.slice(0, candidate.lastIndexOf(" "));
     }
@@ -2498,8 +2498,8 @@ function splitCopy(raw: string): { headline: string; deck: string } {
   // gets two type levels instead of one wall of display serif.
   const only = lines[0];
   if (only.length > 90) {
-    const m = only.match(/^(.{25,110}?[.!?—–-])\s+(.+)$/);
-    if (m) return { headline: m[1].replace(/[—–-]$/, "").trim(), deck: m[2].trim() };
+    const m = only.match(/^(.{25,110}?[.!?\u2014\u2013-])\s+(.+)$/);
+    if (m) return { headline: m[1].replace(/[\u2014\u2013-]$/, "").trim(), deck: m[2].trim() };
   }
   return { headline: only, deck: "" };
 }

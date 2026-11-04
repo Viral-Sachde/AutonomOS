@@ -1,28 +1,28 @@
-# Master Prompt — The Resistance Night
+# Master Prompt: The Resistance Night
 
 Everything needed to generate an on-brand social post for the game, in any AI
 tool. Part 1 is the design system. Part 2 is the prompt to paste.
 
-Values here are transcribed from the running code — `lib/design-system.ts`,
+Values here are transcribed from the running code, `lib/design-system.ts`,
 `lib/content-templates.ts` and `lib/render.ts`. If you change the code, change
 this file too.
 
 ---
 
-# Part 1 — The design system
+# Part 1: The design system
 
 ## The game, in one paragraph
 
 The Resistance Night is a mobile social-deduction party game for 5–10 players on
 one shared phone. Everyone is secretly assigned a role. The Good team runs
 missions; the Evil team sabotages them while pretending not to. The tension is
-entirely social — you are reading your actual friends, and they are lying to
+entirely social, you are reading your actual friends, and they are lying to
 your face. Medieval-fantasy dressing, modern party-game feel.
 
 ## Voice
 
 Lowercase. Mysterious, playful, slightly menacing. "time to lie to your friends"
-energy — casual but dramatic. Short sentences. Dramatic pauses via line breaks.
+energy, casual but dramatic. Short sentences. Dramatic pauses via line breaks.
 
 **Do:** second person ("your best friend just voted to fail"). Concrete moments
 from a real game night. A first line that stops the scroll on its own.
@@ -94,7 +94,7 @@ Six layout families. Pick one per post; never run the same look twice in a row.
 | Assassin | evil | one shot at Merlin at the end, can steal the whole game |
 | Morgana | evil | wears Merlin's face |
 | Mordred | evil | invisible even to Merlin |
-| Oberon | evil | evil, and alone — the other traitors don't know him |
+| Oberon | evil | evil, and alone: the other traitors don't know him |
 
 ## Themes
 
@@ -120,7 +120,7 @@ Rotate 8–11 from: `#GameNight #BoardGames #FriendsNight #PartyVibes #Bluffing
 
 ---
 
-# Part 2 — The master prompt
+# Part 2: The master prompt
 
 Paste everything below into any AI tool. Replace the bracketed lines at the
 bottom; delete the whole `MY IDEA` block if you want it to choose for you.
@@ -223,7 +223,7 @@ Do not reuse these recent hooks: [paste your last few opening lines, or delete]
 ## Using the output
 
 The app renders the artwork itself from `LOOK`, `KICKER`, `HEADLINE`, `DECK`
-and `CTA` — you do not need an image generator. To render by hand:
+and `CTA`, you do not need an image generator. To render by hand:
 
 ```bash
 cd marketing
@@ -235,7 +235,7 @@ on any agent in the dashboard, which appends it to that agent's own prompt.
 
 ## Why the app does not use an image generator
 
-The posts are typographic — the headline *is* the creative. Raster image models
+The posts are typographic, the headline *is* the creative. Raster image models
 still cannot set type reliably or hit exact brand hex values, and cost $0.04–0.17
 per image against $0 for the built-in renderer. The renderer is also seeded, so
 re-rendering an item produces the identical picture; a generated image would

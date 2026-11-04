@@ -148,7 +148,7 @@ export function assessContent(
     }
   }
 
-  if (/[—–]/.test(copy)) {
+  if (/[\u2014\u2013]/.test(copy)) {
     problems.push({ code: "em-dash", detail: "em dashes are not the brand voice" });
   }
 

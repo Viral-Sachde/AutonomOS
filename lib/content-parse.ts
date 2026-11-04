@@ -74,7 +74,7 @@ export function stripHashtags(input: string): string {
 /** The brand voice does not use em dashes. */
 export function stripEmDashes(input: string): string {
   return input
-    .replace(/\s*[—–]\s*/g, ", ")
+    .replace(/\s*[\u2014\u2013]\s*/g, ", ")
     .replace(/,\s*,/g, ",")
     .replace(/([,;:])\s*,/g, "$1");
 }
