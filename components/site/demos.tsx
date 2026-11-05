@@ -92,28 +92,28 @@ export function OrchestratorDemo({ compact = false }: { compact?: boolean }) {
             <button
               key={g.goal}
               onClick={() => { setPick(i); setTick(0); }}
-              className={`rounded-full border px-3.5 py-1.5 text-[13px] transition-colors ${i === pick ? "border-cream/40 bg-cream/10 text-cream" : "border-cream/10 text-mist hover:text-cream"}`}
+              className={`border px-3.5 py-1.5 text-[13px] transition-colors ${i === pick ? "border-cream/40 bg-cream/10 text-cream" : "border-cream/10 text-mist hover:text-cream"}`}
             >
               {g.goal}
             </button>
           ))}
         </div>
-        <div className="mt-4 flex items-center gap-2 rounded-2xl border border-cream/10 bg-cream/[0.03] p-2 pl-4">
+        <div className="mt-4 flex items-center gap-2 border border-cream/10 bg-white/[0.05] p-2 pl-4">
           <Wand2 size={16} className="shrink-0 text-teal" />
           <span className="min-w-0 flex-1 truncate text-[15px]">
             {goal.slice(0, typed)}
             {typing && <span className="ml-0.5 inline-block h-4 w-px translate-y-0.5 animate-pulse bg-cream" />}
           </span>
-          <span className={`shrink-0 rounded-full px-4 py-2 text-[13px] font-semibold transition-colors ${typing ? "bg-cream/10 text-mist" : "bg-cream text-night"}`}>Run</span>
+          <span className={`shrink-0 px-4 py-2 text-[13px] font-semibold transition-colors ${typing ? "bg-cream/10 text-mist" : "bg-cream text-black"}`}>Run</span>
         </div>
         <ol className="mt-3 min-h-[290px] space-y-2">
           {steps.slice(0, shown).map((s, i) => {
             const st = status(i);
             return (
-              <li key={s.title} className={`rise flex items-center gap-3 rounded-2xl border px-4 py-3 transition-colors ${st === "running" ? "border-teal/40 bg-teal/[0.07]" : "border-cream/[0.07] bg-cream/[0.02]"}`}>
+              <li key={s.title} className={`rise flex items-center gap-3 border px-4 py-3 transition-colors ${st === "running" ? "border-teal/40 bg-teal/[0.07]" : "border-cream/[0.07] bg-cream/[0.02]"}`}>
                 {st === "running" ? <Loader2 size={16} className="shrink-0 animate-spin text-teal" /> : st === "done" ? <CheckCircle2 size={16} className="shrink-0 text-teal" /> : st === "review" ? <Eye size={16} className="shrink-0 text-ops" /> : <CircleDashed size={16} className="shrink-0 text-dusk" />}
                 <span className="min-w-0 flex-1 truncate text-[14px]">{s.title}</span>
-                <span className="hidden shrink-0 rounded-full px-2.5 py-0.5 text-[11px] sm:inline" style={{ color: C(s.dept), background: `${C(s.dept)}1f` }}>{s.agent}</span>
+                <span className="hidden shrink-0 px-2.5 py-0.5 text-[11px] sm:inline" style={{ color: C(s.dept), background: `${C(s.dept)}1f` }}>{s.agent}</span>
               </li>
             );
           })}
@@ -140,16 +140,16 @@ function MarketingWidget() {
   const approved = cycle > 120;
   return (
     <div ref={ref} className="grid gap-4 sm:grid-cols-[220px_1fr]">
-      <div className="relative aspect-square overflow-hidden rounded-2xl bg-night">
+      <div className="relative aspect-square overflow-hidden bg-night">
         <Swirl seed={14} scale={2.4} accent={C("marketing")} interactive={false} />
-        <p className="absolute bottom-3 left-3 right-3 font-display text-[20px] font-semibold leading-tight tracking-[-0.03em] text-cream drop-shadow">Pricing that grows with you</p>
+        <p className="absolute inset-x-0 bottom-0 bg-black px-3 py-2.5 font-display text-[20px] font-bold uppercase leading-[0.95] tracking-[-0.04em] text-cream">Pricing that grows with you</p>
       </div>
       <div className="flex flex-col">
         <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-dusk">Content Writer · post</p>
         <p className="mt-3 min-h-[72px] text-[15px] leading-relaxed">{caption.slice(0, typed)}{typed < caption.length && <span className="ml-0.5 inline-block h-4 w-px animate-pulse bg-cream align-middle" />}</p>
         <p className="mt-2 text-[13px] text-teal">#autonomos #agents #ops</p>
         <div className="mt-auto pt-4">
-          <span className={`inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-[13px] font-semibold transition-colors ${approved ? "bg-teal text-night" : "border border-cream/15 text-mist"}`}>
+          <span className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 text-[13px] font-semibold transition-colors ${approved ? "bg-teal text-black" : "border border-cream/15 text-mist"}`}>
             {approved ? <><Check size={14} /> Approved, scheduled 18:00</> : <><Eye size={14} /> Waiting for you</>}
           </span>
         </div>
@@ -173,10 +173,10 @@ function SalesWidget() {
     <div ref={ref} className="-mx-1 overflow-x-auto px-1 pb-1">
       <div className="grid min-w-[560px] grid-cols-5 gap-2">
         {STAGES.map((stage, si) => (
-          <div key={stage} className="min-h-[220px] rounded-xl bg-cream/[0.03] p-2">
+          <div key={stage} className="min-h-[220px] bg-white/[0.05] p-2">
             <p className="mb-2 px-1 font-mono text-[10.5px] uppercase tracking-wider text-dusk">{stage}</p>
             {DEALS.filter((d, i) => (d.s + Math.floor((tick + i * 2) / 3)) % 5 === si).map((d) => (
-              <div key={d.n} className="rise mb-2 rounded-lg border border-cream/[0.07] bg-night p-2.5">
+              <div key={d.n} className="rise mb-2 border border-cream/[0.07] bg-night p-2.5">
                 <p className="text-[13px]">{d.n}</p>
                 <p className="font-mono text-[11px]" style={{ color: C("sales") }}>{d.v}</p>
               </div>
@@ -224,7 +224,7 @@ function IntelWidget() {
       </svg>
       <ul className="space-y-2">
         {SIGNALS.map((s) => (
-          <li key={s.t} className={`flex items-center gap-3 rounded-xl border px-3 py-2.5 transition-all duration-500 ${seen.includes(s) ? "border-intel/40 bg-intel/[0.08] opacity-100" : "border-cream/[0.06] opacity-35"}`}>
+          <li key={s.t} className={`flex items-center gap-3 border px-3 py-2.5 transition-all duration-500 ${seen.includes(s) ? "border-intel/40 bg-intel/[0.08] opacity-100" : "border-cream/[0.06] opacity-35"}`}>
             <span className="w-16 shrink-0 font-mono text-[10.5px] uppercase text-intel">{s.k}</span>
             <span className="text-[13.5px]">{s.t}</span>
           </li>
@@ -248,10 +248,10 @@ function OpsWidget() {
   return (
     <div ref={ref} className="grid grid-cols-2 gap-2 md:grid-cols-4">
       {cols.map((c, ci) => (
-        <div key={c} className="min-h-[200px] rounded-xl bg-cream/[0.03] p-2">
+        <div key={c} className="min-h-[200px] bg-white/[0.05] p-2">
           <p className="mb-2 px-1 font-mono text-[10.5px] uppercase tracking-wider text-dusk">{c}</p>
           {TASKS.filter((_, i) => Math.min(3, Math.max(0, Math.floor((tick - i * 2) / 2) % 6)) === ci).map(([t, d]) => (
-            <div key={t} className="rise mb-2 rounded-lg border border-cream/[0.07] bg-night p-2.5">
+            <div key={t} className="rise mb-2 border border-cream/[0.07] bg-night p-2.5">
               <p className="text-[12.5px] leading-snug">{t}</p>
               <span className="mt-1.5 inline-block h-1.5 w-6 rounded-full" style={{ background: C(d) }} />
             </div>
@@ -283,13 +283,13 @@ export function DeptDemo() {
           <button
             key={d.id}
             onClick={() => setTab(d.id)}
-            className={`flex items-center gap-2 rounded-full border px-4 py-2 text-[14px] transition-colors ${tab === d.id ? "border-cream/30 bg-cream/10 text-cream" : "border-cream/10 text-mist hover:text-cream"}`}
+            className={`flex items-center gap-2 border px-4 py-2 text-[14px] transition-colors ${tab === d.id ? "border-cream/30 bg-cream/10 text-cream" : "border-cream/10 text-mist hover:text-cream"}`}
           >
             <span className="h-2 w-2 rounded-full" style={{ background: d.color }} /> {d.name}
           </button>
         ))}
       </div>
-      <div key={tab} className="rise mt-6 rounded-[24px] border border-cream/[0.08] bg-night-2 p-5 md:p-7">
+      <div key={tab} className="rise mt-6 border border-cream/[0.08] bg-[#111] p-5 md:p-7">
         <DeptWidget id={tab} />
       </div>
     </div>
@@ -310,43 +310,50 @@ const DRAFTS: [string, DeptId, string][] = [
 
 export function ApprovalDemo() {
   const [i, setI] = useState(0);
-  const [log, setLog] = useState<{ ok: boolean }[]>([]);
+  const [log, setLog] = useState<boolean[]>([]);
+  const [fly, setFly] = useState<0 | 1 | -1>(0);
   const done = i >= DRAFTS.length;
-  const act = (ok: boolean) => { setLog((l) => [...l, { ok }]); setI((n) => n + 1); };
-  const shipped = log.filter((l) => l.ok).length;
+  const act = (ok: boolean) => {
+    if (fly || done) return;
+    setFly(ok ? 1 : -1);
+    setTimeout(() => { setLog((l) => [...l, ok]); setI((n) => n + 1); setFly(0); }, 380);
+  };
+  const shipped = log.filter(Boolean).length;
 
   return (
-    <div className="mx-auto max-w-xl">
-      <div className="relative h-[150px]">
+    <div className="mx-auto w-full max-w-2xl">
+      <div className="relative h-[240px]">
         {done ? (
-          <div className="rise flex h-full flex-col items-center justify-center gap-3 rounded-[24px] border border-cream/10 bg-night-2 text-center">
-            <p className="font-display text-[44px] font-semibold tracking-[-0.05em]">{shipped} shipped</p>
-            <button onClick={() => { setI(0); setLog([]); }} className="inline-flex items-center gap-1.5 text-[13px] text-mist hover:text-cream"><RotateCcw size={13} /> again</button>
+          <div className="rise flex h-full flex-col items-start justify-end bg-teal p-6 text-black">
+            <p className="font-display text-[72px] font-bold uppercase leading-[0.85] tracking-[-0.06em]">{shipped} shipped</p>
+            <button onClick={() => { setI(0); setLog([]); }} className="mt-3 inline-flex items-center gap-1.5 text-[14px] font-semibold uppercase tracking-[0.06em]"><RotateCcw size={14} /> Again</button>
           </div>
         ) : (
           DRAFTS.slice(i, i + 3).reverse().map(([t, d, a], k, arr) => {
             const depth = arr.length - 1 - k;
+            const top = depth === 0;
+            const tf = top && fly ? `translateX(${fly * 130}%) rotate(${fly * 14}deg)` : `translateY(${depth * 14}px) scale(${1 - depth * 0.05})`;
             return (
               <div
                 key={t}
-                className="absolute inset-x-0 top-0 rounded-[24px] border border-cream/10 bg-night-2 p-6 transition-all duration-300"
-                style={{ transform: `translateY(${depth * 12}px) scale(${1 - depth * 0.04})`, opacity: depth ? 0.5 - depth * 0.15 : 1, zIndex: 10 - depth }}
+                className="absolute inset-0 flex flex-col justify-between p-6 text-black transition-all duration-[380ms] ease-[cubic-bezier(.4,0,.2,1)]"
+                style={{ background: top ? "#EDE4CF" : depth === 1 ? "#c9c0ab" : "#a39b88", transform: tf, opacity: top && fly ? 0 : 1, zIndex: 10 - depth }}
               >
-                <p className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.16em]" style={{ color: C(d) }}>
-                  <span className="h-1.5 w-1.5 rounded-full" style={{ background: C(d) }} /> {a}
+                <p className="flex items-center gap-2 text-[13px] font-semibold uppercase tracking-[0.1em]">
+                  <span className="h-3 w-3" style={{ background: C(d) }} /> {a}
                 </p>
-                <p className="mt-4 font-display text-[22px] font-semibold leading-tight tracking-[-0.03em]">{t}</p>
+                <p className="font-display text-[30px] font-bold uppercase leading-[0.95] tracking-[-0.04em] md:text-[40px]">{t}</p>
               </div>
             );
           })
         )}
       </div>
-      <div className="mt-8 flex items-center justify-center gap-3">
-        <button disabled={done} onClick={() => act(false)} className="inline-flex h-14 w-14 items-center justify-center rounded-full border border-cream/15 text-mist transition-colors hover:border-cream/40 hover:text-cream disabled:opacity-30" aria-label="Discard"><X size={22} /></button>
-        <button disabled={done} onClick={() => act(true)} className="inline-flex h-14 items-center gap-2 rounded-full bg-cream px-7 text-[15px] font-semibold text-night transition-colors hover:bg-star disabled:opacity-30"><Check size={18} /> Approve</button>
+      <div className="mt-6 grid grid-cols-2 gap-2">
+        <button disabled={done} onClick={() => act(false)} className="flex h-16 items-center justify-center gap-2 border border-cream/30 text-[15px] font-semibold uppercase tracking-[0.06em] text-cream transition-colors hover:bg-cream/10 disabled:opacity-30"><X size={18} /> Discard</button>
+        <button disabled={done} onClick={() => act(true)} className="flex h-16 items-center justify-center gap-2 bg-cream text-[15px] font-semibold uppercase tracking-[0.06em] text-black transition-colors hover:bg-teal disabled:opacity-30"><Check size={18} /> Approve</button>
       </div>
-      <div className="mt-6 flex justify-center gap-1.5">
-        {DRAFTS.map((_, k) => <span key={k} className={`h-1.5 w-6 rounded-full ${k < log.length ? (log[k].ok ? "bg-teal" : "bg-cream/30") : "bg-cream/10"}`} />)}
+      <div className="mt-4 flex gap-1">
+        {DRAFTS.map((_, k) => <span key={k} className={`h-1 flex-1 ${k < log.length ? (log[k] ? "bg-teal" : "bg-cream/40") : "bg-cream/10"}`} />)}
       </div>
     </div>
   );
@@ -364,7 +371,7 @@ export function ChainDemo() {
     <div ref={ref} className="flex flex-col items-stretch gap-2 md:flex-row md:items-center">
       {chain.map(([l, d], i) => (
         <div key={l} className="flex flex-1 flex-col items-center gap-2 md:flex-row">
-          <div className={`w-full rounded-2xl border px-4 py-5 text-center transition-all duration-500 ${i < at ? "border-transparent" : "border-cream/10"}`} style={i < at ? { background: `${C(d)}26`, boxShadow: `inset 0 0 0 1px ${C(d)}66` } : undefined}>
+          <div className={`w-full border px-4 py-5 text-center transition-all duration-500 ${i < at ? "border-transparent" : "border-cream/10"}`} style={i < at ? { background: `${C(d)}26`, boxShadow: `inset 0 0 0 1px ${C(d)}66` } : undefined}>
             <p className="font-display text-[19px] font-semibold tracking-[-0.03em]">{l}</p>
             <p className="mt-1 font-mono text-[10.5px] uppercase" style={{ color: i < at ? C(d) : "#6c7489" }}>{i < at ? "done" : i === at ? "next" : "waiting"}</p>
           </div>
@@ -392,11 +399,11 @@ export function SwirlPlayground() {
   const [accent, setAccent] = useState("#6E8CCB");
   return (
     <div>
-      <div className="relative h-[460px] overflow-hidden rounded-[28px] bg-night">
+      <div className="relative h-[460px] overflow-hidden bg-night">
         <Swirl seed={seed} speed={speed} scale={scale} accent={accent} />
       </div>
-      <div className="mt-4 grid gap-4 rounded-[22px] border border-cream/[0.08] bg-night-2 p-5 md:grid-cols-[auto_1fr_1fr_auto] md:items-center">
-        <button onClick={() => setSeed(Math.random() * 100)} className="inline-flex items-center justify-center gap-2 rounded-full bg-cream px-5 py-2.5 text-[14px] font-semibold text-night hover:bg-star"><Shuffle size={15} /> New</button>
+      <div className="mt-4 grid gap-4 border border-cream/[0.08] bg-[#111] p-5 md:grid-cols-[auto_1fr_1fr_auto] md:items-center">
+        <button onClick={() => setSeed(Math.random() * 100)} className="inline-flex items-center justify-center gap-2 bg-cream px-5 py-2.5 text-[14px] font-semibold text-black hover:bg-star"><Shuffle size={15} /> New</button>
         <label className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-wider text-mist">
           flow <input type="range" min="0" max="4" step="0.1" value={speed} onChange={(e) => setSpeed(+e.target.value)} className="w-full accent-teal" />
         </label>
@@ -418,8 +425,8 @@ export function Swatch({ name, hex, dark }: { name: string; hex: string; dark?: 
   return (
     <button
       onClick={() => { navigator.clipboard?.writeText(hex).catch(() => {}); setCopied(true); setTimeout(() => setCopied(false), 1200); }}
-      className="group flex h-40 flex-col justify-between rounded-[22px] border border-cream/[0.08] p-4 text-left transition-transform hover:-translate-y-0.5"
-      style={{ background: hex, color: dark ? "#121827" : "#ede4cf" }}
+      className="group flex h-40 flex-col justify-between border border-cream/[0.08] p-4 text-left transition-transform hover:-translate-y-0.5"
+      style={{ background: hex, color: dark ? "#050505" : "#ede4cf" }}
     >
       <span className="font-display text-[20px] font-semibold tracking-[-0.03em]">{name}</span>
       <span className="font-mono text-[12px] opacity-80">{copied ? "copied" : hex}</span>

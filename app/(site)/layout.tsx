@@ -3,7 +3,7 @@ import { SiteFooter } from "@/components/site/ui";
 
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="grain min-h-screen overflow-x-hidden bg-night text-cream selection:bg-teal/40">
+    <div className="min-h-screen overflow-x-clip bg-black text-cream selection:bg-teal selection:text-black">
       <SiteNav />
       <main>{children}</main>
       <SiteFooter />

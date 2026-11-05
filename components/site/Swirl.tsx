@@ -55,8 +55,8 @@ void main(){
   vec2 r = vec2(fbm3(p + 2.0 * q + vec2(1.7, 9.2) + t * 0.6 + pull), fbm3(p + 2.0 * q + vec2(8.3, 2.8) - t * 0.4));
   float v = fbm3(p + 2.2 * r);
 
-  vec3 night  = vec3(0.071, 0.094, 0.153);
-  vec3 slate  = vec3(0.227, 0.259, 0.337);
+  vec3 night  = vec3(0.020, 0.020, 0.020);
+  vec3 slate  = vec3(0.165, 0.176, 0.200);
   vec3 bronze = vec3(0.612, 0.420, 0.278);
   vec3 teal   = vec3(0.310, 0.659, 0.608);
   vec3 cream  = vec3(0.929, 0.894, 0.812);

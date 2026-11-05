@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /*
- * AutonomOS brand tokens (see /brand for the guidelines): night navy,
+ * AutonomOS brand tokens (see /brand for the guidelines): black,
  * cream, teal, periwinkle and bronze, taken from the swirl artwork.
  *
  * Fonts come from next/font in app/layout.tsx as CSS variables. The dashboard
@@ -17,18 +17,18 @@
 
 @theme {
   /* Brand: the night palette from the swirl artwork */
-  --color-night: #121827;
-  --color-night-2: #182033;
-  --color-night-3: #222b40;
-  --color-slate: #3a4256;
+  --color-night: #050505;
+  --color-night-2: #0e0e0e;
+  --color-night-3: #181818;
+  --color-slate: #2a2d33;
   --color-bronze: #9c6b47;
   --color-teal: #4fa89b;
   --color-teal-soft: #7cc4b8;
   --color-cream: #ede4cf;
   --color-peri: #6e8ccb;
   --color-star: #f5f1e6;
-  --color-mist: #a9b0c2;
-  --color-dusk: #6c7489;
+  --color-mist: #a3a3a3;
+  --color-dusk: #6b6b6b;
 
   /* Departments */
   --color-mkt: #d49a6a;
@@ -38,16 +38,16 @@
   --color-pulse: #4fa89b;
 
   /* Legacy dashboard names, remapped */
-  --color-ink-black: #121827;
-  --color-twilight-indigo: #1a2236;
-  --color-vintage-grape: #2a3247;
-  --color-cool-steel: #a9b0c2;
+  --color-ink-black: #0a0a0a;
+  --color-twilight-indigo: #141414;
+  --color-vintage-grape: #262626;
+  --color-cool-steel: #a3a3a3;
   --color-strawberry-red: #e07a6a;
-  --color-deep-space-blue: #0e1320;
+  --color-deep-space-blue: #050505;
   --color-gold: #7cc4b8;
   --color-champagne: #ede4cf;
   --color-parchment: #f5f1e6;
-  --color-paper: #151c2c;
+  --color-paper: #111111;
   --color-emerald: #4fa89b;
 }
 
@@ -72,7 +72,7 @@
 }
 
 body {
-  background: #0e1320;
+  background: #050505;
   color: #ede4cf;
 }
 
@@ -123,4 +123,16 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .ring-breathe, .rise, .edge-live { animation: none !important; }
+}
+
+/* Poster motion */
+@keyframes marquee { to { transform: translateX(-50%); } }
+.marquee { animation: marquee 28s linear infinite; }
+@keyframes word-rise { from { transform: translateY(105%); } to { transform: none; } }
+.word-rise { display: inline-block; animation: word-rise 0.9s cubic-bezier(.2,.8,.2,1) both; }
+[data-reveal] { opacity: 0; transform: translateY(48px); transition: opacity .8s ease, transform .9s cubic-bezier(.2,.8,.2,1); }
+[data-reveal][data-in="true"] { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .marquee, .word-rise { animation: none !important; }
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
 }

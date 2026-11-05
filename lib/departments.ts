@@ -26,7 +26,7 @@ export const BRAND = {
   name: "AutonomOS",
   tagline: "AI company orchestration platform",
   ember: "#4fa89b",
-  ink: "#121827",
+  ink: "#050505",
 };
 
 export const DEPARTMENTS: Department[] = [

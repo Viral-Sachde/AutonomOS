@@ -54,7 +54,7 @@ export default function OrchestratorGraph({
               </circle>
             )}
             <circle cx={x} cy={y} r="22" fill={d.color} />
-            <text x={x} y={y + 5} textAnchor="middle" fontSize="14" fontWeight="700" fill="#121827">{n}</text>
+            <text x={x} y={y + 5} textAnchor="middle" fontSize="14" fontWeight="700" fill="#050505">{n}</text>
             <text x={x} y={y + (d.id === "intelligence" ? 42 : -32)} textAnchor="middle" fontSize="11" fill="currentColor" opacity="0.75">
               {d.name}
             </text>

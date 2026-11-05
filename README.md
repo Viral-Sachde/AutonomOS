@@ -46,17 +46,17 @@ below, and also falls back to templates when no key is set.
 
 Live guidelines at `/brand`. In short:
 
-- **Mark:** one ribbon of nested colour bands flowing across a night sky,
+- **Mark:** one ribbon of nested colour bands flowing across a black, starry sky,
   drawn from the swirl artwork. Geometry lives in `lib/brand-mark.ts`; logo
   files are in `public/brand/`.
-- **Palette:** Night `#121827`, Slate `#3A4256`, Bronze `#9C6B47`, Teal
+- **Palette:** Black `#050505`, Slate `#2A2D33`, Bronze `#9C6B47`, Teal
   `#4FA89B`, Cream `#EDE4CF`, Periwinkle `#6E8CCB`. Departments: Marketing
   `#D49A6A`, Sales `#4FA89B`, Intelligence `#6E8CCB`, Operations `#E3C77E`.
 - **The swirl:** `components/site/Swirl.tsx` renders the artwork live in a
   WebGL shader (domain-warped noise quantised into outlined bands, stars and
   grain). It pauses offscreen and respects reduced motion.
 - **Type:** Bricolage Grotesque, Hanken Grotesk, JetBrains Mono via `next/font`.
-- **Site style:** minimal copy, live demos instead of paragraphs
+- **Site style:** flat poster layout on black, huge type, minimal copy, scroll-driven ribbon story and live demos instead of paragraphs
   (`components/site/demos.tsx`). No em dashes.
 
 ## Marketing department

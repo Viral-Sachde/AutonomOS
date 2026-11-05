@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Swirl from "@/components/site/Swirl";
-import Mark from "@/components/site/Mark";
 import { DeptWidget } from "@/components/site/demos";
-import { CTA, Headline, Label, PrimaryButton, Section } from "@/components/site/ui";
+import { Button, CTA, Headline, Marquee, Reveal } from "@/components/site/ui";
 import { DEPARTMENTS } from "@/lib/departments";
 
 export function generateStaticParams() {
@@ -24,63 +23,51 @@ export default async function DepartmentPage({ params }: { params: Promise<{ id:
   const i = DEPARTMENTS.findIndex((x) => x.id === id);
   if (i < 0) notFound();
   const d = DEPARTMENTS[i];
-  const prev = DEPARTMENTS[(i + 3) % 4];
   const next = DEPARTMENTS[(i + 1) % 4];
 
   return (
     <>
-      <section className="relative h-[72svh] min-h-[520px] overflow-hidden bg-night">
+      <section className="relative h-[85svh] min-h-[560px] overflow-hidden bg-black">
         <div className="absolute inset-0"><Swirl seed={SEEDS[d.id]} scale={1.6} accent={d.color} /></div>
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(18,24,39,0.4)_0%,transparent_35%,rgba(18,24,39,1)_100%)]" />
-        <div className="pointer-events-none relative mx-auto flex h-full max-w-7xl flex-col justify-end px-4 pb-14 md:px-8">
-          <div className="pointer-events-auto mb-8 flex flex-wrap gap-2">
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[70%] bg-[linear-gradient(180deg,transparent_0%,rgba(0,0,0,0.8)_45%,#000_75%)]" />
+        <div className="pointer-events-none relative flex h-full flex-col justify-end px-4 pb-10 md:px-8">
+          <div className="pointer-events-auto mb-6 flex flex-wrap">
             {DEPARTMENTS.map((x) => (
-              <a key={x.id} href={`/departments/${x.id}`} className={`flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-[13px] backdrop-blur ${x.id === d.id ? "border-cream/40 bg-cream/10 text-cream" : "border-cream/15 bg-night/40 text-mist hover:text-cream"}`}>
-                <span className="h-1.5 w-1.5 rounded-full" style={{ background: x.color }} /> {x.name}
+              <a key={x.id} href={`/departments/${x.id}`} className={`px-3 py-2 text-[13px] font-semibold uppercase tracking-[0.08em] ${x.id === d.id ? "text-black" : "text-cream/70 hover:text-cream"}`} style={x.id === d.id ? { background: x.color } : undefined}>
+                {x.name}
               </a>
             ))}
           </div>
-          <div className="flex items-center gap-4">
-            <Mark size={56} accent={d.color} id={`dm-${d.id}`} />
-            <div className="rounded-full bg-night/70 px-3.5 py-1.5 backdrop-blur"><Label color={d.color}>{d.blurb}</Label></div>
-          </div>
-          <Headline as="h1" className="mt-4">{d.name}</Headline>
+          <Headline as="h1" rise>{d.name}</Headline>
         </div>
       </section>
 
-      <Section>
-        <div className="rounded-[28px] border border-cream/[0.08] bg-night-2 p-5 md:p-8"><DeptWidget id={d.id} /></div>
-      </Section>
+      <div style={{ background: d.color }} className="text-black"><Marquee items={d.blurb.split(", ")} /></div>
 
-      <Section className="!pt-0">
-        <Label color={d.color}>Agents</Label>
-        <div className="mt-8 grid gap-px overflow-hidden rounded-[24px] border border-cream/[0.08] bg-cream/[0.08] sm:grid-cols-2 lg:grid-cols-4">
-          {d.agents.map((a) => (
-            <div key={a.id} className="bg-night p-6">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-50" style={{ background: d.color }} />
-                <span className="relative h-2 w-2 rounded-full" style={{ background: d.color }} />
-              </span>
-              <p className="mt-10 font-display text-[22px] font-semibold tracking-[-0.035em]">{a.name}</p>
-              <p className="mt-1.5 text-[14px] text-mist">{a.role}</p>
+      <section className="bg-black px-4 py-20 md:px-8 md:py-28">
+        <Reveal><DeptWidget id={d.id} /></Reveal>
+      </section>
+
+      <section className="bg-black">
+        {d.agents.map((a, k) => (
+          <Reveal key={a.id} delay={k * 80}>
+            <div className="group grid gap-2 border-t border-cream/15 px-4 py-8 md:grid-cols-[1.3fr_1fr] md:items-end md:px-8" style={{ ["--c" as string]: d.color }}>
+              <p className="font-display text-[11vw] font-bold uppercase leading-[0.85] tracking-[-0.055em] transition-colors group-hover:text-[var(--c)] md:text-[6vw]">{a.name}</p>
+              <p className="text-[17px] text-mist md:text-right md:text-[19px]">{a.role}</p>
             </div>
-          ))}
-        </div>
-        <div className="mt-10"><PrimaryButton href={`/dashboard#${d.id === "marketing" ? "agents" : d.id}`}>Open {d.name.toLowerCase()}</PrimaryButton></div>
-      </Section>
-
-      <section className="px-4 pb-6 md:px-8">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-3">
-          <a href={`/departments/${prev.id}`} className="rounded-[22px] border border-cream/[0.08] p-6 hover:border-cream/20">
-            <ArrowLeft size={16} className="text-dusk" />
-            <p className="mt-3 font-display text-[24px] font-semibold tracking-[-0.04em] md:text-[30px]">{prev.name}</p>
-          </a>
-          <a href={`/departments/${next.id}`} className="rounded-[22px] border border-cream/[0.08] p-6 text-right hover:border-cream/20">
-            <ArrowRight size={16} className="ml-auto text-dusk" />
-            <p className="mt-3 font-display text-[24px] font-semibold tracking-[-0.04em] md:text-[30px]">{next.name}</p>
-          </a>
+          </Reveal>
+        ))}
+        <div className="border-t border-cream/15 px-4 py-10 md:px-8">
+          <Button href={`/dashboard#${d.id === "marketing" ? "agents" : d.id}`}>Open {d.name}</Button>
         </div>
       </section>
+
+      <a href={`/departments/${next.id}`} className="group block px-4 py-16 text-black md:px-8 md:py-24" style={{ background: next.color }}>
+        <p className="text-[13px] font-semibold uppercase tracking-[0.12em]">Next</p>
+        <p className="flex items-center gap-4 font-display text-[15vw] font-bold uppercase leading-[0.8] tracking-[-0.06em] md:text-[10vw]">
+          {next.name} <ArrowRight className="h-[8vw] w-[8vw] shrink-0 transition-transform group-hover:translate-x-4" />
+        </p>
+      </a>
 
       <CTA />
     </>

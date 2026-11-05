@@ -6,8 +6,8 @@
  * same path stroked at a narrower width, drawn widest first.
  */
 export const PALETTE = {
-  "night": "#121827",
-  "slate": "#3A4256",
+  "night": "#050505",
+  "slate": "#2A2D33",
   "bronze": "#9C6B47",
   "teal": "#4FA89B",
   "cream": "#EDE4CF",
@@ -17,6 +17,6 @@ export const PALETTE = {
 
 export const MARK_MAIN = "M-10 50C6 50 13 25 30 26C46 27 50 41 76 23";
 export const MARK_ECHO = "M30 74C42 62 56 62 74 46";
-export const MARK_MAIN_BANDS: [string, number][] = [["#3A4256",34],["#9C6B47",27],["#4FA89B",21.5],["#EDE4CF",15],["#4FA89B",10.5],["#EDE4CF",8.6],["#6E8CCB",6.2]];
-export const MARK_ECHO_BANDS: [string, number][] = [["#3A4256",12],["#9C6B47",9],["#4FA89B",6],["#EDE4CF",3]];
+export const MARK_MAIN_BANDS: [string, number][] = [["#2A2D33",34],["#9C6B47",27],["#4FA89B",21.5],["#EDE4CF",15],["#4FA89B",10.5],["#EDE4CF",8.6],["#6E8CCB",6.2]];
+export const MARK_ECHO_BANDS: [string, number][] = [["#2A2D33",12],["#9C6B47",9],["#4FA89B",6],["#EDE4CF",3]];
 export const MARK_STARS: [number, number, number][] = [[13,12,1.3],[24,7,0.8],[52,33,1],[8,30,0.7],[44,12,0.6]];
