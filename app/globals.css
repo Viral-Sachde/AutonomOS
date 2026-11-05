@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 /*
- * AutonomOS brand tokens (see /brand for the guidelines).
+ * AutonomOS brand tokens (see /brand for the guidelines): night navy,
+ * cream, teal, periwinkle and bronze, taken from the swirl artwork.
  *
  * Fonts come from next/font in app/layout.tsx as CSS variables. The dashboard
  * was built on an older palette, so its legacy token names (ink-black, gold,
- * champagne...) are kept and mapped onto the brand: warm charcoal, Paper
- * white, Ember coral as the one accent, and a secondary colour per department.
+ * champagne...) are kept and mapped onto the new palette.
  */
 @theme inline {
   --font-sans: var(--font-hanken), ui-sans-serif, system-ui, sans-serif;
@@ -16,37 +16,39 @@
 }
 
 @theme {
-  /* Brand */
-  --color-ember: #e0584c;
-  --color-ember-soft: #ee7a6f;
-  --color-ember-deep: #b8423a;
-  --color-coal: #121110;
-  --color-coal-2: #1a1918;
-  --color-coal-3: #24221f;
-  --color-ash: #a29d97;
-  --color-smoke: #6f6a64;
-  --color-paper-white: #f3efea;
-  --color-bone: #e8e2d9;
+  /* Brand: the night palette from the swirl artwork */
+  --color-night: #121827;
+  --color-night-2: #182033;
+  --color-night-3: #222b40;
+  --color-slate: #3a4256;
+  --color-bronze: #9c6b47;
+  --color-teal: #4fa89b;
+  --color-teal-soft: #7cc4b8;
+  --color-cream: #ede4cf;
+  --color-peri: #6e8ccb;
+  --color-star: #f5f1e6;
+  --color-mist: #a9b0c2;
+  --color-dusk: #6c7489;
 
-  /* Departments (secondary palette) */
-  --color-mkt: #f28c5b;
-  --color-sales: #4fb286;
-  --color-intel: #7a9cf5;
-  --color-ops: #e9b949;
-  --color-pulse: #e0584c;
+  /* Departments */
+  --color-mkt: #d49a6a;
+  --color-sales: #4fa89b;
+  --color-intel: #6e8ccb;
+  --color-ops: #e3c77e;
+  --color-pulse: #4fa89b;
 
   /* Legacy dashboard names, remapped */
-  --color-ink-black: #121110;
-  --color-twilight-indigo: #1b1a19;
-  --color-vintage-grape: #2a2826;
-  --color-cool-steel: #a29d97;
-  --color-strawberry-red: #ff6b5e;
-  --color-deep-space-blue: #0e0d0c;
-  --color-gold: #ee7a6f;
-  --color-champagne: #f3efea;
-  --color-parchment: #fffdf9;
-  --color-paper: #171615;
-  --color-emerald: #4fb286;
+  --color-ink-black: #121827;
+  --color-twilight-indigo: #1a2236;
+  --color-vintage-grape: #2a3247;
+  --color-cool-steel: #a9b0c2;
+  --color-strawberry-red: #e07a6a;
+  --color-deep-space-blue: #0e1320;
+  --color-gold: #7cc4b8;
+  --color-champagne: #ede4cf;
+  --color-parchment: #f5f1e6;
+  --color-paper: #151c2c;
+  --color-emerald: #4fa89b;
 }
 
 /* Dashboard headings used a serif italic in the old palette: keep them upright in the display grotesk. */
@@ -70,14 +72,14 @@
 }
 
 body {
-  background: #0e0d0c;
-  color: #f3efea;
+  background: #0e1320;
+  color: #ede4cf;
 }
 
 .scrollbar-thin::-webkit-scrollbar { width: 4px; }
 .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
 .scrollbar-thin::-webkit-scrollbar-thumb {
-  background: rgba(238, 122, 111, 0.25);
+  background: rgba(124, 196, 184, 0.25);
   border-radius: 2px;
 }
 
@@ -87,14 +89,14 @@ body {
 }
 
 .shimmer {
-  background: linear-gradient(90deg, transparent 0%, rgba(238,122,111,0.08) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(124,196,184,0.08) 50%, transparent 100%);
   background-size: 200% 100%;
   animation: shimmer 2s infinite;
 }
 
 @keyframes pulse-gold {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(238, 122, 111, 0.4); }
-  50% { box-shadow: 0 0 0 8px rgba(238, 122, 111, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(124, 196, 184, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(124, 196, 184, 0); }
 }
 
 .pulse-gold {

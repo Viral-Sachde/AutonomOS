@@ -44,19 +44,20 @@ below, and also falls back to templates when no key is set.
 
 ## Brand
 
-The full guidelines live at `/brand`. In short:
+Live guidelines at `/brand`. In short:
 
-- **Mark:** the ring, an O with four soft lobes. The open centre is the
-  orchestrator, the lobes are the four departments. Geometry is generated
-  into `lib/brand-geometry.ts`; files are in `public/brand/`.
-- **Colour:** Ember `#E0584C` (the one accent), Coal `#121110` (canvas),
-  Paper `#F3EFEA` (text and light sections). Department colours are a warm
-  secondary palette: Marketing `#F28C5B`, Sales `#4FB286`, Intelligence
-  `#7A9CF5`, Operations `#E9B949`.
-- **Type:** Bricolage Grotesque (display), Hanken Grotesk (body), JetBrains
-  Mono (labels), loaded with `next/font` in `app/layout.tsx`.
-- **Texture:** 7% film grain and a soft Ember glow behind the subject.
-- **Voice:** plain, specific, calm, human in charge. No em dashes.
+- **Mark:** one ribbon of nested colour bands flowing across a night sky,
+  drawn from the swirl artwork. Geometry lives in `lib/brand-mark.ts`; logo
+  files are in `public/brand/`.
+- **Palette:** Night `#121827`, Slate `#3A4256`, Bronze `#9C6B47`, Teal
+  `#4FA89B`, Cream `#EDE4CF`, Periwinkle `#6E8CCB`. Departments: Marketing
+  `#D49A6A`, Sales `#4FA89B`, Intelligence `#6E8CCB`, Operations `#E3C77E`.
+- **The swirl:** `components/site/Swirl.tsx` renders the artwork live in a
+  WebGL shader (domain-warped noise quantised into outlined bands, stars and
+  grain). It pauses offscreen and respects reduced motion.
+- **Type:** Bricolage Grotesque, Hanken Grotesk, JetBrains Mono via `next/font`.
+- **Site style:** minimal copy, live demos instead of paragraphs
+  (`components/site/demos.tsx`). No em dashes.
 
 ## Marketing department
 

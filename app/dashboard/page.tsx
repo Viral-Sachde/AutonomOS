@@ -564,7 +564,7 @@ export default function MarketingDashboard() {
                       onClick={() => { setPublishResult(null); handlePublishConfirm(false); }}
                       disabled={publishing}
                       className="w-full flex items-center justify-center gap-2 py-2.5 bg-champagne text-ink-black text-[11px] font-bold tracking-wider uppercase hover:bg-gold transition-colors disabled:opacity-50"
-                      style={{ boxShadow: "2px 2px 0 #ee7a6f" }}
+                      style={{ boxShadow: "2px 2px 0 #7cc4b8" }}
                     >
                       {publishing ? <Loader2 size={14} className="animate-spin" /> : <RefreshCw size={14} />}
                       {publishing ? "retrying..." : "retry publishing"}
@@ -596,7 +596,7 @@ export default function MarketingDashboard() {
                   onClick={() => handlePublishConfirm(false)}
                   disabled={publishing}
                   className="w-full flex items-center justify-center gap-2 py-3 bg-champagne text-ink-black text-[11px] font-bold tracking-wider uppercase hover:bg-gold transition-colors disabled:opacity-50"
-                  style={{ boxShadow: "2px 2px 0 #ee7a6f" }}
+                  style={{ boxShadow: "2px 2px 0 #7cc4b8" }}
                 >
                   {publishing ? (
                     <Loader2 size={14} className="animate-spin" />
@@ -655,7 +655,7 @@ function DashboardView({
             <div className="mt-6 flex flex-wrap gap-3">
               <a
                 href="#command"
-                className="inline-flex items-center gap-2 rounded-lg bg-pulse px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#c94a3f]"
+                className="inline-flex items-center gap-2 rounded-lg bg-pulse px-5 py-2.5 text-sm font-semibold text-night transition-colors hover:bg-[#3f8a7f]"
               >
                 <Sparkles size={16} /> Give the orchestrator a goal
               </a>
@@ -1173,7 +1173,7 @@ function GenerateView({
         onClick={onGenerate}
         disabled={generating}
         className="w-full flex items-center justify-center gap-2 py-4 bg-champagne text-ink-black text-sm font-bold tracking-wider lowercase hover:bg-gold transition-colors disabled:opacity-50"
-        style={{ boxShadow: "3px 3px 0 #ee7a6f" }}
+        style={{ boxShadow: "3px 3px 0 #7cc4b8" }}
       >
         {generating ? (
           <>
@@ -1515,7 +1515,7 @@ function ImprovementsView({
           onClick={onGenerate}
           disabled={loading}
           className="flex items-center gap-2 px-4 py-2.5 bg-champagne text-ink-black text-xs font-bold tracking-wider lowercase hover:bg-gold transition-colors disabled:opacity-50 whitespace-nowrap"
-          style={{ boxShadow: "2px 2px 0 #ee7a6f" }}
+          style={{ boxShadow: "2px 2px 0 #7cc4b8" }}
         >
           {loading ? <Loader2 size={14} className="animate-spin" /> : <Zap size={14} />}
           scan for improvements

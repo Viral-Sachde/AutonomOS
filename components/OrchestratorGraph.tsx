@@ -1,7 +1,8 @@
 "use client";
 
 import { DEPARTMENTS, type DeptId } from "@/lib/departments";
-import { RING_PATH } from "@/lib/brand-geometry";
+import { useId } from "react";
+import { MARK_ECHO, MARK_ECHO_BANDS, MARK_MAIN, MARK_MAIN_BANDS, MARK_STARS, PALETTE } from "@/lib/brand-mark";
 
 /**
  * The orchestration layer as a picture: one core node and the four
@@ -23,6 +24,7 @@ export default function OrchestratorGraph({
     intelligence: [160, 274],
     operations: [46, 160],
   };
+  const clip = `og-${useId().replace(/:/g, "")}`;
   return (
     <svg viewBox="0 0 320 320" width="100%" style={{ maxWidth: size }} role="img" aria-label="Orchestrator and its four departments">
       <circle cx="160" cy="160" r="114" fill="none" stroke="currentColor" strokeOpacity="0.08" strokeWidth="1.5" />
@@ -52,20 +54,29 @@ export default function OrchestratorGraph({
               </circle>
             )}
             <circle cx={x} cy={y} r="22" fill={d.color} />
-            <text x={x} y={y + 5} textAnchor="middle" fontSize="14" fontWeight="700" fill="#121110">{n}</text>
+            <text x={x} y={y + 5} textAnchor="middle" fontSize="14" fontWeight="700" fill="#121827">{n}</text>
             <text x={x} y={y + (d.id === "intelligence" ? 42 : -32)} textAnchor="middle" fontSize="11" fill="currentColor" opacity="0.75">
               {d.name}
             </text>
           </g>
         );
       })}
-      <circle cx="160" cy="160" r="46" fill="#e0584c" opacity="0.14" />
+      <circle cx="160" cy="160" r="50" fill="#7cc4b8" opacity="0.12">
+        {active.length > 0 && <animate attributeName="r" values="44;54;44" dur="2.4s" repeatCount="indefinite" />}
+      </circle>
+      <defs>
+        <clipPath id={clip}>
+          <circle cx="32" cy="32" r="32" />
+        </clipPath>
+      </defs>
       <g transform="translate(122 122) scale(1.1875)">
-        <path fillRule="evenodd" clipRule="evenodd" fill="#e0584c" d={RING_PATH}>
-          {active.length > 0 && (
-            <animateTransform attributeName="transform" type="rotate" values="0 32 32;10 32 32;0 32 32" dur="2.4s" repeatCount="indefinite" />
-          )}
-        </path>
+        <g clipPath={`url(#${clip})`}>
+          <rect width="64" height="64" fill={PALETTE.night} />
+          {MARK_STARS.map(([x, y, r]) => <circle key={`${x}-${y}`} cx={x} cy={y} r={r} fill={PALETTE.star} />)}
+          {MARK_ECHO_BANDS.map(([c, w], i) => <path key={`e${i}`} d={MARK_ECHO} stroke={c} strokeWidth={w} strokeLinecap="round" fill="none" />)}
+          {MARK_MAIN_BANDS.map(([c, w], i) => <path key={`m${i}`} d={MARK_MAIN} stroke={c} strokeWidth={w} strokeLinecap="round" fill="none" />)}
+        </g>
+        <circle cx="32" cy="32" r="31.5" fill="none" stroke="#ede4cf" strokeOpacity="0.25" />
       </g>
     </svg>
   );

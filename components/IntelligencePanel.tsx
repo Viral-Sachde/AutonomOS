@@ -7,8 +7,8 @@ import { useLocalState } from "./useLocalState";
 import { SEED_COMPETITORS, SEED_SCORED_LEADS, SEED_SIGNALS, type Signal } from "@/lib/demo-data";
 import type { CompetitorBrief } from "@/lib/departments";
 
-const BLUE = "#7a9cf5";
-const THREAT: Record<CompetitorBrief["threat"], string> = { low: "#4fb286", medium: "#e9b949", high: "#ff6b5e" };
+const BLUE = "#6e8ccb";
+const THREAT: Record<CompetitorBrief["threat"], string> = { low: "#4fa89b", medium: "#e3c77e", high: "#e07a6a" };
 const SIGNAL_LABEL: Record<Signal["kind"], string> = { launch: "launch", funding: "funding", hiring: "hiring", pricing: "pricing", mention: "mention" };
 
 async function scan(name: string): Promise<CompetitorBrief> {
@@ -150,7 +150,7 @@ export default function IntelligencePanel() {
                   <span className="font-mono text-[12px]" style={{ color: BLUE }}>{l.fit}</span>
                 </div>
                 <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-ink-black/70">
-                  <div className="h-full rounded-full" style={{ width: `${l.fit}%`, background: `linear-gradient(90deg, ${BLUE}, #e0584c)` }} />
+                  <div className="h-full rounded-full" style={{ width: `${l.fit}%`, background: `linear-gradient(90deg, ${BLUE}, #4fa89b)` }} />
                 </div>
                 <p className="mt-1 text-[11px] text-cool-steel">{l.contact}, {l.title}. {l.reason}</p>
               </li>

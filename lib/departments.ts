@@ -25,8 +25,8 @@ export interface Department {
 export const BRAND = {
   name: "AutonomOS",
   tagline: "AI company orchestration platform",
-  ember: "#e0584c",
-  ink: "#121110",
+  ember: "#4fa89b",
+  ink: "#121827",
 };
 
 export const DEPARTMENTS: Department[] = [
@@ -34,7 +34,7 @@ export const DEPARTMENTS: Department[] = [
     id: "marketing",
     name: "Marketing",
     blurb: "Research, content, campaigns",
-    color: "#f28c5b",
+    color: "#d49a6a",
     mark: "/brand/marketing.svg",
     agents: [
       { id: "content-writer", name: "Content Writer", role: "Writes daily posts, reels and stories in the brand voice" },
@@ -47,7 +47,7 @@ export const DEPARTMENTS: Department[] = [
     id: "sales",
     name: "Sales",
     blurb: "Prospecting, outreach, CRM",
-    color: "#4fb286",
+    color: "#4fa89b",
     mark: "/brand/sales.svg",
     agents: [
       { id: "sales.prospector", name: "Prospector", role: "Finds and qualifies leads against your ICP" },
@@ -60,7 +60,7 @@ export const DEPARTMENTS: Department[] = [
     id: "intelligence",
     name: "Intelligence",
     blurb: "Competitors, markets, leads",
-    color: "#7a9cf5",
+    color: "#6e8ccb",
     mark: "/brand/intelligence.svg",
     agents: [
       { id: "intel.competitor", name: "Competitor Watch", role: "Builds and refreshes a brief on every rival" },
@@ -73,7 +73,7 @@ export const DEPARTMENTS: Department[] = [
     id: "operations",
     name: "Operations",
     blurb: "Tasks, workflows, reporting",
-    color: "#e9b949",
+    color: "#e3c77e",
     mark: "/brand/operations.svg",
     agents: [
       { id: "ops.router", name: "Task Router", role: "Turns plans into owned, ordered tasks" },

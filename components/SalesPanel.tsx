@@ -7,7 +7,7 @@ import { useLocalState } from "./useLocalState";
 import { DEAL_STAGES, SEED_DEALS, type Deal, type DealStage } from "@/lib/demo-data";
 import type { Lead, SequenceStep } from "@/lib/departments";
 
-const GREEN = "#4fb286";
+const GREEN = "#4fa89b";
 
 async function runAgent<T>(agent: string, input: Record<string, string>): Promise<T> {
   const res = await fetch("/api/departments/run", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ agent, input }) });
